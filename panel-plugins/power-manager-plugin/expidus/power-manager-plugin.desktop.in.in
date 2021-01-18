@@ -1,0 +1,9 @@
+[Expidus Panel]
+Type=X-EXPIDUS-PanelPlugin
+_Name=Power Manager Plugin
+_Comment=Display the battery levels of your devices and control the brightness of your display
+Icon=com.expidus.powermanager
+X-EXPIDUS-Module=expidus1powermanager
+X-EXPIDUS-Unique=TRUE
+X-EXPIDUS-Internal=false
+X-EXPIDUS-API=2.0

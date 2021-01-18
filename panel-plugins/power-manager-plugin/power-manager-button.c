@@ -1,5 +1,5 @@
 /*
- * * Copyright (C) 2014 Eric Koegel <eric@xfce.org>
+ * * Copyright (C) 2014 Eric Koegel <eric@expidus.org>
  * * Copyright (C) 2019 Kacper Piwiński
  *
  * Licensed under the GNU General Public License Version 2
@@ -28,19 +28,19 @@
 #include <string.h>
 
 #include <glib.h>
-#include <libxfce4util/libxfce4util.h>
-#include <libxfce4ui/libxfce4ui.h>
+#include <libexpidus1util/libexpidus1util.h>
+#include <libexpidus1ui/libexpidus1ui.h>
 #include <upower.h>
-#include <xfconf/xfconf.h>
+#include <esconf/esconf.h>
 
-#include "common/xfpm-common.h"
-#include "common/xfpm-config.h"
-#include "common/xfpm-icons.h"
-#include "common/xfpm-power-common.h"
-#include "common/xfpm-brightness.h"
-#include "common/xfpm-debug.h"
-#ifdef XFPM_SYSTRAY
-#include "src/xfpm-inhibit.h"
+#include "common/espm-common.h"
+#include "common/espm-config.h"
+#include "common/espm-icons.h"
+#include "common/espm-power-common.h"
+#include "common/espm-brightness.h"
+#include "common/espm-debug.h"
+#ifdef ESPM_SYSTRAY
+#include "src/espm-inhibit.h"
 #endif
 
 #include "power-manager-button.h"
@@ -52,14 +52,14 @@
 
 struct PowerManagerButtonPrivate
 {
-#ifdef XFCE_PLUGIN
-  XfcePanelPlugin *plugin;
+#ifdef EXPIDUS_PLUGIN
+  ExpidusPanelPlugin *plugin;
   GDBusProxy      *inhibit_proxy;
 #else
-  XfpmInhibit     *inhibit;
+  EspmInhibit     *inhibit;
 #endif
 
-  XfconfChannel   *channel;
+  EsconfChannel   *channel;
 
   UpClient        *upower;
 
@@ -86,7 +86,7 @@ struct PowerManagerButtonPrivate
    * panel image and tooltip description */
   UpDevice        *display_device;
 
-  XfpmBrightness  *brightness;
+  EspmBrightness  *brightness;
 
   /* display brightness slider widget */
   GtkWidget       *range;
@@ -148,7 +148,7 @@ static void       power_manager_button_set_icon                         (PowerMa
 static void       power_manager_button_set_label                        (PowerManagerButton *button,
                                                                          gdouble percentage,
                                                                          guint64 time_to_empty_or_full);
-#ifdef XFCE_PLUGIN
+#ifdef EXPIDUS_PLUGIN
 static void       power_manager_button_toggle_presentation_mode         (GtkMenuItem *mi,
                                                                          GtkSwitch *sw);
 static void       power_manager_button_update_presentation_indicator    (PowerManagerButton *button);
@@ -466,7 +466,7 @@ power_manager_button_update_device_icon_and_details (PowerManagerButton *button,
   gchar          *menu_icon_name;
   GdkPixbuf      *pix = NULL;
 
-  XFPM_DEBUG("entering for %s", object_path);
+  ESPM_DEBUG("entering for %s", object_path);
 
   if (!POWER_MANAGER_IS_BUTTON (button))
     return;
@@ -516,7 +516,7 @@ power_manager_button_update_device_icon_and_details (PowerManagerButton *button,
     DBG("this is the display device, updating");
     /* update the icon */
     g_free (button->priv->panel_icon_name);
-#ifdef XFCE_PLUGIN
+#ifdef EXPIDUS_PLUGIN
     button->priv->panel_icon_name = g_strdup (icon_name);
     button->priv->panel_fallback_icon_name = g_strdup_printf ("%s-%s", menu_icon_name, "symbolic");
 #else
@@ -565,7 +565,7 @@ power_manager_button_add_device (UpDevice *device, PowerManagerButton *button)
   const gchar *object_path = up_device_get_object_path(device);
   gulong signal_id;
 
-  XFPM_DEBUG("entering for %s", object_path);
+  ESPM_DEBUG("entering for %s", object_path);
 
   g_return_if_fail (POWER_MANAGER_IS_BUTTON (button ));
 
@@ -575,7 +575,7 @@ power_manager_button_add_device (UpDevice *device, PowerManagerButton *button)
 
   battery_device = g_new0 (BatteryDevice, 1);
 
-  /* hack, this depends on XFPM_DEVICE_TYPE_* being in sync with UP_DEVICE_KIND_* */
+  /* hack, this depends on ESPM_DEVICE_TYPE_* being in sync with UP_DEVICE_KIND_* */
   g_object_get (device,
                 "kind", &type,
                 NULL);
@@ -748,8 +748,8 @@ brightness_up (PowerManagerButton *button)
   gint32 level;
   gint32 max_level;
 
-  xfpm_brightness_get_level (button->priv->brightness, &level);
-  max_level = xfpm_brightness_get_max_level (button->priv->brightness);
+  espm_brightness_get_level (button->priv->brightness, &level);
+  max_level = espm_brightness_get_max_level (button->priv->brightness);
 
   if ( level < max_level )
   {
@@ -761,7 +761,7 @@ static void
 brightness_down (PowerManagerButton *button)
 {
   gint32 level;
-  xfpm_brightness_get_level (button->priv->brightness, &level);
+  espm_brightness_get_level (button->priv->brightness, &level);
 
   if ( level > button->priv->brightness_min_level )
   {
@@ -777,7 +777,7 @@ power_manager_button_scroll_event (GtkWidget *widget, GdkEventScroll *ev)
 
   button = POWER_MANAGER_BUTTON (widget);
 
-  hw_found = xfpm_brightness_has_hw (button->priv->brightness);
+  hw_found = espm_brightness_has_hw (button->priv->brightness);
 
   if (!hw_found)
     return FALSE;
@@ -798,7 +798,7 @@ power_manager_button_scroll_event (GtkWidget *widget, GdkEventScroll *ev)
 static void
 set_brightness_min_level (PowerManagerButton *button, gint32 new_brightness_level)
 {
-  gint32 max_level = xfpm_brightness_get_max_level (button->priv->brightness);
+  gint32 max_level = espm_brightness_get_max_level (button->priv->brightness);
 
   /* sanity check */
   if (new_brightness_level > max_level)
@@ -838,7 +838,7 @@ power_manager_button_set_property (GObject *object,
     case PROP_BRIGHTNESS_MIN_LEVEL:
       set_brightness_min_level (button, g_value_get_int (value));
       break;
-#ifdef XFCE_PLUGIN
+#ifdef EXPIDUS_PLUGIN
     case PROP_SHOW_PANEL_LABEL:
       button->priv->show_panel_label = g_value_get_int (value);
       power_manager_button_update_label (button, button->priv->display_device);
@@ -875,7 +875,7 @@ power_manager_button_get_property(GObject *object,
     case PROP_BRIGHTNESS_MIN_LEVEL:
       g_value_set_int (value, button->priv->brightness_min_level);
       break;
-#ifdef XFCE_PLUGIN
+#ifdef EXPIDUS_PLUGIN
     case PROP_SHOW_PANEL_LABEL:
       g_value_set_int (value, button->priv->show_panel_label);
       break;
@@ -923,7 +923,7 @@ power_manager_button_class_init (PowerManagerButtonClass *klass)
                                                    g_cclosure_marshal_VOID__VOID,
                                                    G_TYPE_NONE, 0);
 
-#define XFPM_PARAM_FLAGS  (G_PARAM_READWRITE \
+#define ESPM_PARAM_FLAGS  (G_PARAM_READWRITE \
                            | G_PARAM_CONSTRUCT \
                            | G_PARAM_STATIC_NAME \
                            | G_PARAM_STATIC_NICK \
@@ -936,29 +936,29 @@ power_manager_button_class_init (PowerManagerButtonClass *klass)
                                                     BRIGHTNESS_SLIDER_MIN_LEVEL,
                                                     BRIGHTNESS_SLIDER_MIN_LEVEL,
                                                     -1, G_MAXINT32, -1,
-                                                    XFPM_PARAM_FLAGS));
+                                                    ESPM_PARAM_FLAGS));
 
   g_object_class_install_property (object_class, PROP_SHOW_PANEL_LABEL,
                                    g_param_spec_int (SHOW_PANEL_LABEL,
                                                      NULL, NULL,
                                                      0, G_MAXINT16, 3,
-                                                     XFPM_PARAM_FLAGS));
+                                                     ESPM_PARAM_FLAGS));
 
   g_object_class_install_property (object_class, PROP_PRESENTATION_MODE,
                                    g_param_spec_boolean (PRESENTATION_MODE,
                                                          NULL, NULL,
                                                          FALSE,
-                                                         XFPM_PARAM_FLAGS));
+                                                         ESPM_PARAM_FLAGS));
 
   g_object_class_install_property (object_class, PROP_SHOW_PRESENTATION_INDICATOR,
                                    g_param_spec_boolean (SHOW_PRESENTATION_INDICATOR,
                                                          NULL, NULL,
                                                          FALSE,
-                                                         XFPM_PARAM_FLAGS));
-#undef XFPM_PARAM_FLAGS
+                                                         ESPM_PARAM_FLAGS));
+#undef ESPM_PARAM_FLAGS
 }
 
-#ifdef XFCE_PLUGIN
+#ifdef EXPIDUS_PLUGIN
 static void
 inhibit_proxy_ready_cb (GObject *source_object,
                         GAsyncResult *res,
@@ -992,27 +992,27 @@ power_manager_button_init (PowerManagerButton *button)
 #else
   gtk_widget_set_focus_on_click (GTK_WIDGET (button), FALSE);
 #endif
-  gtk_widget_set_name (GTK_WIDGET (button), "xfce4-power-manager-plugin");
+  gtk_widget_set_name (GTK_WIDGET (button), "expidus1-power-manager-plugin");
 
-  button->priv->brightness = xfpm_brightness_new ();
-  xfpm_brightness_setup (button->priv->brightness);
+  button->priv->brightness = espm_brightness_new ();
+  espm_brightness_setup (button->priv->brightness);
   button->priv->set_level_timeout = 0;
 
   button->priv->upower  = up_client_new ();
-  if ( !xfconf_init (&error) )
+  if ( !esconf_init (&error) )
   {
     if (error)
     {
-      g_critical ("xfconf_init failed: %s\n", error->message);
+      g_critical ("esconf_init failed: %s\n", error->message);
       g_error_free (error);
     }
   }
   else
   {
-    button->priv->channel = xfconf_channel_get (XFPM_CHANNEL);
+    button->priv->channel = esconf_channel_get (ESPM_CHANNEL);
   }
 
-#ifdef XFCE_PLUGIN
+#ifdef EXPIDUS_PLUGIN
   g_dbus_proxy_new (g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, NULL),
                     G_DBUS_PROXY_FLAGS_NONE,
                     NULL,
@@ -1023,11 +1023,11 @@ power_manager_button_init (PowerManagerButton *button)
                     inhibit_proxy_ready_cb,
                     button);
 #else
-  button->priv->inhibit = xfpm_inhibit_new ();
+  button->priv->inhibit = espm_inhibit_new ();
 #endif
 
   /* Sane defaults for the systray and panel icon */
-#ifdef XFCE_PLUGIN
+#ifdef EXPIDUS_PLUGIN
   button->priv->panel_icon_name = g_strdup (PANEL_DEFAULT_ICON_SYMBOLIC);
   button->priv->panel_fallback_icon_name = g_strdup (PANEL_DEFAULT_ICON_SYMBOLIC);
 #else
@@ -1039,7 +1039,7 @@ power_manager_button_init (PowerManagerButton *button)
   /* Sane default Gtk style */
   css_provider = gtk_css_provider_new ();
   gtk_css_provider_load_from_data (css_provider,
-                                   "#xfce4-power-manager-plugin {"
+                                   "#expidus1-power-manager-plugin {"
                                    "padding: 1px;"
                                    "border-width: 1px;}",
                                    -1, NULL);
@@ -1074,7 +1074,7 @@ power_manager_button_finalize (GObject *object)
 
   power_manager_button_remove_all_devices (button);
 
-#ifdef XFCE_PLUGIN
+#ifdef EXPIDUS_PLUGIN
   g_object_unref (button->priv->plugin);
 #endif
 
@@ -1082,28 +1082,28 @@ power_manager_button_finalize (GObject *object)
 }
 
 GtkWidget *
-#ifdef XFCE_PLUGIN
-power_manager_button_new (XfcePanelPlugin *plugin)
+#ifdef EXPIDUS_PLUGIN
+power_manager_button_new (ExpidusPanelPlugin *plugin)
 #endif
-#ifdef XFPM_SYSTRAY
+#ifdef ESPM_SYSTRAY
 power_manager_button_new (void)
 #endif
 {
   PowerManagerButton *button = NULL;
   button = g_object_new (POWER_MANAGER_TYPE_BUTTON, NULL, NULL);
 
-#ifdef XFCE_PLUGIN
-  button->priv->plugin = XFCE_PANEL_PLUGIN (g_object_ref (plugin));
+#ifdef EXPIDUS_PLUGIN
+  button->priv->plugin = EXPIDUS_PANEL_PLUGIN (g_object_ref (plugin));
 #endif
 
-  xfconf_g_property_bind (button->priv->channel,
-                          XFPM_PROPERTIES_PREFIX BRIGHTNESS_SLIDER_MIN_LEVEL, G_TYPE_INT,
+  esconf_g_property_bind (button->priv->channel,
+                          ESPM_PROPERTIES_PREFIX BRIGHTNESS_SLIDER_MIN_LEVEL, G_TYPE_INT,
                           G_OBJECT (button), BRIGHTNESS_SLIDER_MIN_LEVEL);
-  xfconf_g_property_bind (button->priv->channel, XFPM_PROPERTIES_PREFIX SHOW_PANEL_LABEL, G_TYPE_INT,
+  esconf_g_property_bind (button->priv->channel, ESPM_PROPERTIES_PREFIX SHOW_PANEL_LABEL, G_TYPE_INT,
                           G_OBJECT (button), SHOW_PANEL_LABEL);
-  xfconf_g_property_bind (button->priv->channel, XFPM_PROPERTIES_PREFIX PRESENTATION_MODE, G_TYPE_BOOLEAN,
+  esconf_g_property_bind (button->priv->channel, ESPM_PROPERTIES_PREFIX PRESENTATION_MODE, G_TYPE_BOOLEAN,
                           G_OBJECT (button), PRESENTATION_MODE);
-  xfconf_g_property_bind (button->priv->channel, XFPM_PROPERTIES_PREFIX SHOW_PRESENTATION_INDICATOR, G_TYPE_BOOLEAN,
+  esconf_g_property_bind (button->priv->channel, ESPM_PROPERTIES_PREFIX SHOW_PRESENTATION_INDICATOR, G_TYPE_BOOLEAN,
                           G_OBJECT (button), SHOW_PRESENTATION_INDICATOR);
   return GTK_WIDGET (button);
 }
@@ -1124,19 +1124,19 @@ power_manager_button_press_event (GtkWidget *widget, GdkEventButton *event)
   {
     gboolean state;
 
-    state = xfconf_channel_get_bool (button->priv->channel, XFPM_PROPERTIES_PREFIX PRESENTATION_MODE, FALSE);
-    xfconf_channel_set_bool (button->priv->channel, XFPM_PROPERTIES_PREFIX PRESENTATION_MODE, !state);
+    state = esconf_channel_get_bool (button->priv->channel, ESPM_PROPERTIES_PREFIX PRESENTATION_MODE, FALSE);
+    esconf_channel_set_bool (button->priv->channel, ESPM_PROPERTIES_PREFIX PRESENTATION_MODE, !state);
     return TRUE;
   }
 
   return FALSE;
 }
 
-#ifdef XFCE_PLUGIN
+#ifdef EXPIDUS_PLUGIN
 static void
-power_manager_button_size_changed_cb (XfcePanelPlugin *plugin, gint size, PowerManagerButton *button)
+power_manager_button_size_changed_cb (ExpidusPanelPlugin *plugin, gint size, PowerManagerButton *button)
 {
-#if !LIBXFCE4PANEL_CHECK_VERSION (4, 13, 0)
+#if !LIBEXPIDUS1PANEL_CHECK_VERSION (4, 13, 0)
   GtkStyleContext *context;
   GtkBorder padding, border;
   gint width;
@@ -1145,13 +1145,13 @@ power_manager_button_size_changed_cb (XfcePanelPlugin *plugin, gint size, PowerM
 #endif
 
   g_return_if_fail (POWER_MANAGER_IS_BUTTON (button));
-  g_return_if_fail (XFCE_IS_PANEL_PLUGIN (plugin));
+  g_return_if_fail (EXPIDUS_IS_PANEL_PLUGIN (plugin));
   g_return_if_fail (size > 0);
 
-  size /= xfce_panel_plugin_get_nrows (plugin);
+  size /= expidus_panel_plugin_get_nrows (plugin);
 
-#if LIBXFCE4PANEL_CHECK_VERSION (4, 13, 0)
-  button->priv->panel_icon_width = xfce_panel_plugin_get_icon_size (plugin);
+#if LIBEXPIDUS1PANEL_CHECK_VERSION (4, 13, 0)
+  button->priv->panel_icon_width = expidus_panel_plugin_get_icon_size (plugin);
 #else
   /* Calculate the size of the widget because the theme can override it */
   context = gtk_widget_get_style_context (GTK_WIDGET (button));
@@ -1184,14 +1184,14 @@ power_manager_button_size_changed_cb (XfcePanelPlugin *plugin, gint size, PowerM
 }
 
 static void
-power_manager_button_style_update_cb (XfcePanelPlugin *plugin, PowerManagerButton *button)
+power_manager_button_style_update_cb (ExpidusPanelPlugin *plugin, PowerManagerButton *button)
 {
   gtk_widget_reset_style (GTK_WIDGET (plugin));
-  power_manager_button_size_changed_cb (plugin, xfce_panel_plugin_get_size (plugin), button);
+  power_manager_button_size_changed_cb (plugin, expidus_panel_plugin_get_size (plugin), button);
 }
 
 static void
-power_manager_button_free_data_cb (XfcePanelPlugin *plugin, PowerManagerButton *button)
+power_manager_button_free_data_cb (ExpidusPanelPlugin *plugin, PowerManagerButton *button)
 {
   gtk_widget_destroy (GTK_WIDGET (button));
 }
@@ -1199,7 +1199,7 @@ power_manager_button_free_data_cb (XfcePanelPlugin *plugin, PowerManagerButton *
 static void
 about_cb (GtkMenuItem *menuitem, gpointer user_data)
 {
-  xfpm_about ("org.xfce.powermanager");
+  espm_about ("com.expidus.powermanager");
 }
 #endif
 
@@ -1212,9 +1212,9 @@ power_manager_button_show (PowerManagerButton *button)
 
   g_return_if_fail (POWER_MANAGER_IS_BUTTON (button));
 
-#ifdef XFCE_PLUGIN
-  xfce_panel_plugin_add_action_widget (button->priv->plugin, GTK_WIDGET (button));
-  xfce_panel_plugin_set_small (button->priv->plugin, TRUE);
+#ifdef EXPIDUS_PLUGIN
+  expidus_panel_plugin_add_action_widget (button->priv->plugin, GTK_WIDGET (button));
+  expidus_panel_plugin_set_small (button->priv->plugin, TRUE);
 #endif
 
   button->priv->panel_icon_image = gtk_image_new ();
@@ -1238,8 +1238,8 @@ power_manager_button_show (PowerManagerButton *button)
 
   gtk_container_add (GTK_CONTAINER (button), GTK_WIDGET (hbox));
 
-#ifdef XFCE_PLUGIN
-  xfce_panel_plugin_menu_show_about (button->priv->plugin);
+#ifdef EXPIDUS_PLUGIN
+  expidus_panel_plugin_menu_show_about (button->priv->plugin);
   g_signal_connect (button->priv->plugin, "about", G_CALLBACK (about_cb), NULL);
 
   g_signal_connect (button->priv->plugin, "size-changed",
@@ -1263,7 +1263,7 @@ power_manager_button_show (PowerManagerButton *button)
   power_manager_button_add_all_devices (button);
 }
 
-#ifdef XFCE_PLUGIN
+#ifdef EXPIDUS_PLUGIN
 static void
 power_manager_button_update_presentation_indicator (PowerManagerButton *button)
 {
@@ -1285,12 +1285,12 @@ power_manager_button_update_label (PowerManagerButton *button, UpDevice *device)
   if (!POWER_MANAGER_IS_BUTTON (button) || !UP_IS_DEVICE (device))
       return;
 
-#ifdef XFCE_PLUGIN
+#ifdef EXPIDUS_PLUGIN
   if (button->priv->show_panel_label <= 0 || button->priv->show_panel_label >3)
   {
     gtk_widget_hide (GTK_WIDGET (button->priv->panel_label));
     power_manager_button_size_changed_cb (button->priv->plugin,
-                                          xfce_panel_plugin_get_size (button->priv->plugin),
+                                          expidus_panel_plugin_get_size (button->priv->plugin),
                                           button);
     return;
   }
@@ -1367,8 +1367,8 @@ menu_item_activate_cb(GtkWidget *object, gpointer user_data)
 
     if (battery_device->menu_item == object)
     {
-      /* Call xfpm settings with the device id */
-      xfpm_preferences_device_id (battery_device->object_path);
+      /* Call espm settings with the device id */
+      espm_preferences_device_id (battery_device->object_path);
       return;
     }
   }
@@ -1418,7 +1418,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
                                                              G_CALLBACK (power_manager_button_device_icon_draw),
                                                              battery_device->device);
 
-  /* Active calls xfpm settings with the device's id to display details */
+  /* Active calls espm settings with the device's id to display details */
   g_signal_connect(G_OBJECT(mi), "activate", G_CALLBACK(menu_item_activate_cb), button);
 
   /* Add it to the menu */
@@ -1457,7 +1457,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
   g_free (label);
 }
 
-#ifdef XFCE_PLUGIN
+#ifdef EXPIDUS_PLUGIN
 static void
 display_inhibitors (PowerManagerButton *button, GtkWidget *menu)
 {
@@ -1525,7 +1525,7 @@ display_inhibitors (PowerManagerButton *button, GtkWidget *menu)
   g_return_if_fail (POWER_MANAGER_IS_BUTTON (button));
   g_return_if_fail (GTK_IS_MENU (menu));
 
-  inhibitors = xfpm_inhibit_get_inhibit_list (button->priv->inhibit);
+  inhibitors = espm_inhibit_get_inhibit_list (button->priv->inhibit);
   if (inhibitors != NULL && inhibitors[0] != NULL)
   {
     for (i=0; inhibitors[i] != NULL; i++)
@@ -1550,14 +1550,14 @@ decrease_brightness (PowerManagerButton *button)
 
   TRACE("entering");
 
-  if ( !xfpm_brightness_has_hw (button->priv->brightness) )
+  if ( !espm_brightness_has_hw (button->priv->brightness) )
     return;
 
-  xfpm_brightness_get_level (button->priv->brightness, &level);
+  espm_brightness_get_level (button->priv->brightness, &level);
 
   if ( level > button->priv->brightness_min_level )
   {
-    xfpm_brightness_down (button->priv->brightness, &level);
+    espm_brightness_down (button->priv->brightness, &level);
     if (button->priv->range)
       gtk_range_set_value (GTK_RANGE (button->priv->range), level);
   }
@@ -1570,15 +1570,15 @@ increase_brightness (PowerManagerButton *button)
 
   TRACE("entering");
 
-  if (!xfpm_brightness_has_hw (button->priv->brightness))
+  if (!espm_brightness_has_hw (button->priv->brightness))
     return;
 
-  max_level = xfpm_brightness_get_max_level (button->priv->brightness);
-  xfpm_brightness_get_level (button->priv->brightness, &level);
+  max_level = espm_brightness_get_max_level (button->priv->brightness);
+  espm_brightness_get_level (button->priv->brightness, &level);
 
   if (level < max_level)
   {
-    xfpm_brightness_up (button->priv->brightness, &level);
+    espm_brightness_up (button->priv->brightness, &level);
     if (button->priv->range)
       gtk_range_set_value (GTK_RANGE (button->priv->range), level);
   }
@@ -1593,11 +1593,11 @@ brightness_set_level_with_timeout (PowerManagerButton *button)
 
   range_level = (gint32) gtk_range_get_value (GTK_RANGE (button->priv->range));
 
-  xfpm_brightness_get_level (button->priv->brightness, &hw_level);
+  espm_brightness_get_level (button->priv->brightness, &hw_level);
 
   if (hw_level != range_level)
   {
-    xfpm_brightness_set_level (button->priv->brightness, range_level);
+    espm_brightness_set_level (button->priv->brightness, range_level);
   }
 
   if (button->priv->set_level_timeout)
@@ -1663,7 +1663,7 @@ range_show_cb (GtkWidget *widget, PowerManagerButton *button)
   gtk_grab_remove (widget);
 }
 
-#ifdef XFCE_PLUGIN
+#ifdef EXPIDUS_PLUGIN
 static void
 power_manager_button_toggle_presentation_mode (GtkMenuItem *mi, GtkSwitch *sw)
 {
@@ -1678,7 +1678,7 @@ void
 power_manager_button_show_menu (PowerManagerButton *button)
 {
   GtkWidget *menu, *mi, *img = NULL;
-#ifdef XFCE_PLUGIN
+#ifdef EXPIDUS_PLUGIN
   GtkWidget *box, *label, *sw;
 #endif
   GdkScreen *gscreen;
@@ -1722,23 +1722,23 @@ power_manager_button_show_menu (PowerManagerButton *button)
   }
 
   /* Display brightness slider - show if there's hardware support for it */
-  if ( xfpm_brightness_has_hw (button->priv->brightness) )
+  if ( espm_brightness_has_hw (button->priv->brightness) )
   {
     guint brightness_step_count;
     gboolean brightness_exponential;
 
-    max_level = xfpm_brightness_get_max_level (button->priv->brightness);
+    max_level = espm_brightness_get_max_level (button->priv->brightness);
 
     /* Setup brightness steps */
     brightness_step_count =
-      xfconf_channel_get_uint (button->priv->channel,
-                               XFPM_PROPERTIES_PREFIX BRIGHTNESS_STEP_COUNT,
+      esconf_channel_get_uint (button->priv->channel,
+                               ESPM_PROPERTIES_PREFIX BRIGHTNESS_STEP_COUNT,
                                10);
     brightness_exponential =
-      xfconf_channel_get_bool (button->priv->channel,
-                               XFPM_PROPERTIES_PREFIX BRIGHTNESS_EXPONENTIAL,
+      esconf_channel_get_bool (button->priv->channel,
+                               ESPM_PROPERTIES_PREFIX BRIGHTNESS_EXPONENTIAL,
                                FALSE);
-    xfpm_brightness_set_step_count (button->priv->brightness,
+    espm_brightness_set_step_count (button->priv->brightness,
                                     brightness_step_count,
                                     brightness_exponential);
 
@@ -1750,7 +1750,7 @@ power_manager_button_show_menu (PowerManagerButton *button)
     button->priv->range = scale_menu_item_get_scale (SCALE_MENU_ITEM (mi));
 
     /* update the slider to the current brightness level */
-    xfpm_brightness_get_level (button->priv->brightness, &current_level);
+    espm_brightness_get_level (button->priv->brightness, &current_level);
     gtk_range_set_value (GTK_RANGE (button->priv->range), current_level);
 
     g_signal_connect_swapped (mi, "value-changed", G_CALLBACK (range_value_changed_cb), button);
@@ -1758,7 +1758,7 @@ power_manager_button_show_menu (PowerManagerButton *button)
     g_signal_connect (menu, "show", G_CALLBACK (range_show_cb), button);
 
     /* load and display the brightness icon and force it to 32px size */
-    img = gtk_image_new_from_icon_name (XFPM_DISPLAY_BRIGHTNESS_ICON, GTK_ICON_SIZE_DND);
+    img = gtk_image_new_from_icon_name (ESPM_DISPLAY_BRIGHTNESS_ICON, GTK_ICON_SIZE_DND);
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
     gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM(mi), img);
 G_GNUC_END_IGNORE_DEPRECATIONS
@@ -1768,7 +1768,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
   }
 
   /* Presentation mode checkbox */
-#ifdef XFCE_PLUGIN
+#ifdef EXPIDUS_PLUGIN
   mi = gtk_menu_item_new ();
   box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
   label = gtk_label_new_with_mnemonic (_("Presentation _mode"));
@@ -1784,8 +1784,8 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 #else
   mi = gtk_check_menu_item_new_with_mnemonic (_("Presentation _mode"));
   gtk_widget_set_sensitive (mi, TRUE);
-  xfconf_g_property_bind (button->priv->channel,
-                          XFPM_PROPERTIES_PREFIX PRESENTATION_MODE,
+  esconf_g_property_bind (button->priv->channel,
+                          ESPM_PROPERTIES_PREFIX PRESENTATION_MODE,
                           G_TYPE_BOOLEAN, G_OBJECT (mi), "active");
 #endif
   gtk_widget_show_all (mi);
@@ -1798,15 +1798,15 @@ G_GNUC_END_IGNORE_DEPRECATIONS
   mi = gtk_menu_item_new_with_mnemonic (_("_Settings..."));
   gtk_widget_show (mi);
   gtk_menu_shell_append (GTK_MENU_SHELL(menu), mi);
-  g_signal_connect (G_OBJECT(mi), "activate", G_CALLBACK(xfpm_preferences), NULL);
+  g_signal_connect (G_OBJECT(mi), "activate", G_CALLBACK(espm_preferences), NULL);
 
 #if GTK_CHECK_VERSION (3, 22, 0)
   gtk_menu_popup_at_widget (GTK_MENU (menu),
                             GTK_WIDGET (button),
-#ifdef XFCE_PLUGIN
-                            xfce_panel_plugin_get_orientation (button->priv->plugin) == GTK_ORIENTATION_VERTICAL
+#ifdef EXPIDUS_PLUGIN
+                            expidus_panel_plugin_get_orientation (button->priv->plugin) == GTK_ORIENTATION_VERTICAL
                             ? GDK_GRAVITY_WEST : GDK_GRAVITY_NORTH,
-                            xfce_panel_plugin_get_orientation (button->priv->plugin) == GTK_ORIENTATION_VERTICAL
+                            expidus_panel_plugin_get_orientation (button->priv->plugin) == GTK_ORIENTATION_VERTICAL
                             ? GDK_GRAVITY_EAST : GDK_GRAVITY_SOUTH,
 #else
                             GDK_GRAVITY_NORTH,
@@ -1817,12 +1817,12 @@ G_GNUC_END_IGNORE_DEPRECATIONS
   gtk_menu_popup (GTK_MENU (menu),
                   NULL,
                   NULL,
-#ifdef XFCE_PLUGIN
-                  xfce_panel_plugin_position_menu,
+#ifdef EXPIDUS_PLUGIN
+                  expidus_panel_plugin_position_menu,
 #else
                   NULL,
 #endif
-#ifdef XFCE_PLUGIN
+#ifdef EXPIDUS_PLUGIN
                   button->priv->plugin,
 #else
                   NULL,
@@ -1831,8 +1831,8 @@ G_GNUC_END_IGNORE_DEPRECATIONS
                   gtk_get_current_event_time ());
 #endif
 
-#ifdef XFCE_PLUGIN
-  xfce_panel_plugin_register_menu (button->priv->plugin,
+#ifdef EXPIDUS_PLUGIN
+  expidus_panel_plugin_register_menu (button->priv->plugin,
                                    GTK_MENU (menu));
 #endif
 }

@@ -10,550 +10,550 @@
 # Sveinn í Felli <sveinki@nett.is>, 2011,2013-2014, 2015,2018-2019
 msgid ""
 msgstr ""
-"Project-Id-Version: Xfce4-power-manager\n"
+"Project-Id-Version: Expidus1-power-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-27 12:47+0200\n"
 "PO-Revision-Date: 2020-05-27 10:47+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
-"Language-Team: Icelandic (http://www.transifex.com/xfce/xfce4-power-manager/language/is/)\n"
+"Last-Translator: Expidus Bot <transifex@expidus.org>\n"
+"Language-Team: Icelandic (http://www.transifex.com/expidus/expidus1-power-manager/language/is/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: is\n"
 "Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
 
-#: ../data/interfaces/xfpm-settings.ui.h:1 ../settings/xfpm-settings.c:646
-#: ../settings/xfpm-settings.c:661 ../settings/xfpm-settings.c:688
-#: ../settings/xfpm-settings.c:1660
+#: ../data/interfaces/espm-settings.ui.h:1 ../settings/espm-settings.c:646
+#: ../settings/espm-settings.c:661 ../settings/espm-settings.c:688
+#: ../settings/espm-settings.c:1660
 msgid "Never"
 msgstr "Aldrei"
 
-#: ../data/interfaces/xfpm-settings.ui.h:2
+#: ../data/interfaces/espm-settings.ui.h:2
 msgid "When the screensaver is activated"
 msgstr "Þegar skjáhvílan er virkjuð"
 
-#: ../data/interfaces/xfpm-settings.ui.h:3
+#: ../data/interfaces/espm-settings.ui.h:3
 msgid "When the screensaver is deactivated"
 msgstr "Þegar skjáhvílan er afvirkjuð"
 
-#: ../data/interfaces/xfpm-settings.ui.h:4
+#: ../data/interfaces/espm-settings.ui.h:4
 msgid "Nothing"
 msgstr "Ekkert"
 
-#: ../data/interfaces/xfpm-settings.ui.h:5 ../settings/xfpm-settings-app.c:174
-#: ../settings/xfpm-settings-app.c:221 ../src/xfpm-main.c:441
-msgid "Xfce Power Manager"
-msgstr "XFCE orkustjórnun"
+#: ../data/interfaces/espm-settings.ui.h:5 ../settings/espm-settings-app.c:174
+#: ../settings/espm-settings-app.c:221 ../src/espm-main.c:441
+msgid "Expidus Power Manager"
+msgstr "EXPIDUS orkustjórnun"
 
-#: ../data/interfaces/xfpm-settings.ui.h:6
+#: ../data/interfaces/espm-settings.ui.h:6
 msgid "Power manager settings"
 msgstr "Stillingar orkustjórnunar"
 
-#: ../data/interfaces/xfpm-settings.ui.h:7
-#: ../panel-plugins/power-manager-plugin/xfce/xfce-power-manager-plugin.c:161
+#: ../data/interfaces/espm-settings.ui.h:7
+#: ../panel-plugins/power-manager-plugin/expidus/expidus-power-manager-plugin.c:161
 msgid "_Help"
 msgstr "_Hjálp"
 
-#: ../data/interfaces/xfpm-settings.ui.h:8
-#: ../panel-plugins/power-manager-plugin/xfce/xfce-power-manager-plugin.c:162
+#: ../data/interfaces/espm-settings.ui.h:8
+#: ../panel-plugins/power-manager-plugin/expidus/expidus-power-manager-plugin.c:162
 msgid "_Close"
 msgstr "_Loka"
 
-#: ../data/interfaces/xfpm-settings.ui.h:9
+#: ../data/interfaces/espm-settings.ui.h:9
 msgid "When power button is pressed:"
 msgstr "Þegar ýtt er á aflhnapp:"
 
-#: ../data/interfaces/xfpm-settings.ui.h:10
+#: ../data/interfaces/espm-settings.ui.h:10
 msgid "When sleep button is pressed:"
 msgstr "Þegar ýtt er á svæfingarhnapp:"
 
-#: ../data/interfaces/xfpm-settings.ui.h:11
+#: ../data/interfaces/espm-settings.ui.h:11
 msgid "When hibernate button is pressed:"
 msgstr "Þegar ýtt er á dvalahnapp:"
 
-#: ../data/interfaces/xfpm-settings.ui.h:12
+#: ../data/interfaces/espm-settings.ui.h:12
 msgid "When battery button is pressed:"
 msgstr "Þegar ýtt er á rafhlöðuhnapp:"
 
-#: ../data/interfaces/xfpm-settings.ui.h:13
+#: ../data/interfaces/espm-settings.ui.h:13
 msgid "Exponential"
 msgstr ""
 
-#: ../data/interfaces/xfpm-settings.ui.h:14
+#: ../data/interfaces/espm-settings.ui.h:14
 msgid "Brightness step count:"
 msgstr ""
 
-#: ../data/interfaces/xfpm-settings.ui.h:15
+#: ../data/interfaces/espm-settings.ui.h:15
 msgid "Handle display brightness _keys"
 msgstr "Meðhöndla birtustigsly_kla skjás"
 
-#: ../data/interfaces/xfpm-settings.ui.h:16
+#: ../data/interfaces/espm-settings.ui.h:16
 msgid "<b>Buttons</b>"
 msgstr "<b>Hnappar</b>"
 
-#: ../data/interfaces/xfpm-settings.ui.h:17
+#: ../data/interfaces/espm-settings.ui.h:17
 msgid "Status notifications"
 msgstr "Stöðutilkynningar"
 
-#: ../data/interfaces/xfpm-settings.ui.h:18
+#: ../data/interfaces/espm-settings.ui.h:18
 msgid "System tray icon"
 msgstr "Táknmynd í kerfisbakka"
 
-#: ../data/interfaces/xfpm-settings.ui.h:19
+#: ../data/interfaces/espm-settings.ui.h:19
 msgid "<b>Appearance</b>"
 msgstr "<b>Útlit</b>"
 
-#: ../data/interfaces/xfpm-settings.ui.h:20
+#: ../data/interfaces/espm-settings.ui.h:20
 msgid "General"
 msgstr "Almennt"
 
-#: ../data/interfaces/xfpm-settings.ui.h:21
+#: ../data/interfaces/espm-settings.ui.h:21
 msgid "When inactive for"
 msgstr "Þegar vélin hefur verið óvirk í"
 
-#: ../data/interfaces/xfpm-settings.ui.h:22
+#: ../data/interfaces/espm-settings.ui.h:22
 msgid "System sleep mode:"
 msgstr "Svefnhamur kerfis:"
 
-#: ../data/interfaces/xfpm-settings.ui.h:23
+#: ../data/interfaces/espm-settings.ui.h:23
 msgid "<b>System power saving</b>"
 msgstr "<b>Orkusparnaður kerfis</b>"
 
-#: ../data/interfaces/xfpm-settings.ui.h:24
+#: ../data/interfaces/espm-settings.ui.h:24
 msgid "<b>Laptop Lid</b>"
 msgstr "<b>Fartölvulok</b>"
 
-#: ../data/interfaces/xfpm-settings.ui.h:25
+#: ../data/interfaces/espm-settings.ui.h:25
 msgid "When laptop lid is closed:"
 msgstr "Þegar lok tölvunnar er lagt niður:"
 
-#: ../data/interfaces/xfpm-settings.ui.h:26
+#: ../data/interfaces/espm-settings.ui.h:26
 msgid "On battery"
 msgstr "Á rafhlöðum"
 
-#: ../data/interfaces/xfpm-settings.ui.h:27 ../common/xfpm-power-common.c:374
+#: ../data/interfaces/espm-settings.ui.h:27 ../common/espm-power-common.c:374
 msgid "Plugged in"
 msgstr "Í sambandi"
 
-#: ../data/interfaces/xfpm-settings.ui.h:28
+#: ../data/interfaces/espm-settings.ui.h:28
 msgid "Critical battery power level:"
 msgstr "Stig hættulega lágrar hleðslu:"
 
-#: ../data/interfaces/xfpm-settings.ui.h:30 ../settings/xfpm-settings.c:696
+#: ../data/interfaces/espm-settings.ui.h:30 ../settings/espm-settings.c:696
 #, no-c-format
 msgid "%"
 msgstr "%"
 
-#: ../data/interfaces/xfpm-settings.ui.h:31
+#: ../data/interfaces/espm-settings.ui.h:31
 msgid "On critical battery power:"
 msgstr "Við hættulega lága hleðslu:"
 
-#: ../data/interfaces/xfpm-settings.ui.h:32
+#: ../data/interfaces/espm-settings.ui.h:32
 msgid "<b>Critical power</b>"
 msgstr "<b>Hættulega lág hleðsla</b>"
 
-#: ../data/interfaces/xfpm-settings.ui.h:33
+#: ../data/interfaces/espm-settings.ui.h:33
 msgid "Lock screen when system is going to sleep"
 msgstr "Læsa skjá þegar kerfið fer í svæfingu"
 
-#: ../data/interfaces/xfpm-settings.ui.h:34
+#: ../data/interfaces/espm-settings.ui.h:34
 msgid "<b>Security</b>"
 msgstr "<b>Öryggi</b>"
 
-#: ../data/interfaces/xfpm-settings.ui.h:35
+#: ../data/interfaces/espm-settings.ui.h:35
 msgid "System"
 msgstr "Kerfis"
 
-#: ../data/interfaces/xfpm-settings.ui.h:36
+#: ../data/interfaces/espm-settings.ui.h:36
 msgid "<b>Display power management</b>"
 msgstr "<b>Birta stillingar orkustjórnunar</b>"
 
-#: ../data/interfaces/xfpm-settings.ui.h:37
+#: ../data/interfaces/espm-settings.ui.h:37
 msgid ""
 "Let the power manager handle display power management (DPMS) instead of X11."
 msgstr "Láta orkustjórnunareininguna meðhöndla orkusparnað skjás (DPMS) í stað X11-þjónsins."
 
-#: ../data/interfaces/xfpm-settings.ui.h:38
+#: ../data/interfaces/espm-settings.ui.h:38
 msgid "Blank after"
 msgstr "Tæma eftir"
 
-#: ../data/interfaces/xfpm-settings.ui.h:39
+#: ../data/interfaces/espm-settings.ui.h:39
 msgid "Put to sleep after"
 msgstr "Svæfa eftir"
 
-#: ../data/interfaces/xfpm-settings.ui.h:40
+#: ../data/interfaces/espm-settings.ui.h:40
 msgid "Switch off after"
 msgstr "Slökkva á eftir"
 
-#: ../data/interfaces/xfpm-settings.ui.h:41
+#: ../data/interfaces/espm-settings.ui.h:41
 msgid "On inactivity reduce to"
 msgstr "Við aðgerðaleysi minnka í"
 
-#: ../data/interfaces/xfpm-settings.ui.h:42
+#: ../data/interfaces/espm-settings.ui.h:42
 msgid "Reduce after"
 msgstr "Minnka eftir"
 
-#: ../data/interfaces/xfpm-settings.ui.h:43
+#: ../data/interfaces/espm-settings.ui.h:43
 msgid "<b>Brightness reduction</b>"
 msgstr "<b>Minnkun á birtustigi</b>"
 
-#: ../data/interfaces/xfpm-settings.ui.h:44
+#: ../data/interfaces/espm-settings.ui.h:44
 msgid "Display"
 msgstr "Skjár"
 
-#: ../data/interfaces/xfpm-settings.ui.h:45
+#: ../data/interfaces/espm-settings.ui.h:45
 msgid "Automatically lock the session:"
 msgstr "Læsa setu sjálfvirkt:"
 
-#: ../data/interfaces/xfpm-settings.ui.h:46
+#: ../data/interfaces/espm-settings.ui.h:46
 msgid "Delay locking after screensaver for"
 msgstr "Tefja skjálæsingu eftir að skjáhvíla fer í gang í"
 
-#: ../data/interfaces/xfpm-settings.ui.h:47
+#: ../data/interfaces/espm-settings.ui.h:47
 msgid "<b>Light Locker</b>"
 msgstr "<b>Ljóslæsing</b>"
 
-#: ../data/interfaces/xfpm-settings.ui.h:48
+#: ../data/interfaces/espm-settings.ui.h:48
 msgid "Security"
 msgstr "Öryggi"
 
-#: ../settings/xfpm-settings.c:649
+#: ../settings/espm-settings.c:649
 msgid "One minute"
 msgstr "Ein mínúta"
 
-#: ../settings/xfpm-settings.c:651 ../settings/xfpm-settings.c:663
-#: ../settings/xfpm-settings.c:674 ../settings/xfpm-settings.c:678
-#: ../settings/xfpm-settings.c:1669
+#: ../settings/espm-settings.c:651 ../settings/espm-settings.c:663
+#: ../settings/espm-settings.c:674 ../settings/espm-settings.c:678
+#: ../settings/espm-settings.c:1669
 msgid "minutes"
 msgstr "mínútur"
 
-#: ../settings/xfpm-settings.c:665 ../settings/xfpm-settings.c:672
-#: ../settings/xfpm-settings.c:673 ../settings/xfpm-settings.c:674
+#: ../settings/espm-settings.c:665 ../settings/espm-settings.c:672
+#: ../settings/espm-settings.c:673 ../settings/espm-settings.c:674
 msgid "One hour"
 msgstr "Ein klukkustund"
 
-#: ../settings/xfpm-settings.c:673 ../settings/xfpm-settings.c:677
+#: ../settings/espm-settings.c:673 ../settings/espm-settings.c:677
 msgid "one minute"
 msgstr "ein mínúta"
 
-#: ../settings/xfpm-settings.c:676 ../settings/xfpm-settings.c:677
-#: ../settings/xfpm-settings.c:678
+#: ../settings/espm-settings.c:676 ../settings/espm-settings.c:677
+#: ../settings/espm-settings.c:678
 msgid "hours"
 msgstr "klukkustundir"
 
-#: ../settings/xfpm-settings.c:690 ../settings/xfpm-settings.c:1662
+#: ../settings/espm-settings.c:690 ../settings/espm-settings.c:1662
 msgid "seconds"
 msgstr "sekúndur"
 
-#: ../settings/xfpm-settings.c:903 ../settings/xfpm-settings.c:982
-#: ../settings/xfpm-settings.c:1044 ../settings/xfpm-settings.c:1140
-#: ../settings/xfpm-settings.c:1232 ../settings/xfpm-settings.c:1351
-#: ../settings/xfpm-settings.c:1409 ../settings/xfpm-settings.c:1461
-#: ../settings/xfpm-settings.c:1512 ../src/xfpm-power.c:703
+#: ../settings/espm-settings.c:903 ../settings/espm-settings.c:982
+#: ../settings/espm-settings.c:1044 ../settings/espm-settings.c:1140
+#: ../settings/espm-settings.c:1232 ../settings/espm-settings.c:1351
+#: ../settings/espm-settings.c:1409 ../settings/espm-settings.c:1461
+#: ../settings/espm-settings.c:1512 ../src/espm-power.c:703
 msgid "Suspend"
 msgstr "Setja í bið"
 
-#: ../settings/xfpm-settings.c:907 ../settings/xfpm-settings.c:1144
+#: ../settings/espm-settings.c:907 ../settings/espm-settings.c:1144
 msgid "Suspend operation not permitted"
 msgstr "'Setja í bið' aðgerð ekki leyfileg"
 
-#: ../settings/xfpm-settings.c:911 ../settings/xfpm-settings.c:1148
+#: ../settings/espm-settings.c:911 ../settings/espm-settings.c:1148
 msgid "Suspend operation not supported"
 msgstr "'Setja í bið' aðgerð ekki studd"
 
-#: ../settings/xfpm-settings.c:917 ../settings/xfpm-settings.c:988
-#: ../settings/xfpm-settings.c:1050 ../settings/xfpm-settings.c:1154
-#: ../settings/xfpm-settings.c:1238 ../settings/xfpm-settings.c:1357
-#: ../settings/xfpm-settings.c:1415 ../settings/xfpm-settings.c:1467
-#: ../settings/xfpm-settings.c:1518 ../src/xfpm-power.c:692
+#: ../settings/espm-settings.c:917 ../settings/espm-settings.c:988
+#: ../settings/espm-settings.c:1050 ../settings/espm-settings.c:1154
+#: ../settings/espm-settings.c:1238 ../settings/espm-settings.c:1357
+#: ../settings/espm-settings.c:1415 ../settings/espm-settings.c:1467
+#: ../settings/espm-settings.c:1518 ../src/espm-power.c:692
 msgid "Hibernate"
 msgstr "Leggja í dvala"
 
-#: ../settings/xfpm-settings.c:921 ../settings/xfpm-settings.c:1158
+#: ../settings/espm-settings.c:921 ../settings/espm-settings.c:1158
 msgid "Hibernate operation not permitted"
 msgstr "'Leggja í dvala' aðgerð ekki leyfileg"
 
-#: ../settings/xfpm-settings.c:925 ../settings/xfpm-settings.c:1162
+#: ../settings/espm-settings.c:925 ../settings/espm-settings.c:1162
 msgid "Hibernate operation not supported"
 msgstr "'Leggja í dvala' aðgerð ekki studd"
 
-#: ../settings/xfpm-settings.c:955 ../settings/xfpm-settings.c:1192
-#: ../settings/xfpm-settings.c:1618 ../settings/xfpm-settings.c:1745
+#: ../settings/espm-settings.c:955 ../settings/espm-settings.c:1192
+#: ../settings/espm-settings.c:1618 ../settings/espm-settings.c:1745
 msgid "Hibernate and suspend operations not supported"
 msgstr "'Leggja í dvala' og 'Setja í bið' aðgerðir ekki studdar"
 
-#: ../settings/xfpm-settings.c:960 ../settings/xfpm-settings.c:1197
-#: ../settings/xfpm-settings.c:1623 ../settings/xfpm-settings.c:1750
+#: ../settings/espm-settings.c:960 ../settings/espm-settings.c:1197
+#: ../settings/espm-settings.c:1623 ../settings/espm-settings.c:1750
 msgid "Hibernate and suspend operations not permitted"
 msgstr "'Leggja í dvala' og 'Setja í bið' aðgerðir ekki leyfilegar"
 
-#: ../settings/xfpm-settings.c:977 ../settings/xfpm-settings.c:1346
-#: ../settings/xfpm-settings.c:1404 ../settings/xfpm-settings.c:1456
-#: ../settings/xfpm-settings.c:1507
+#: ../settings/espm-settings.c:977 ../settings/espm-settings.c:1346
+#: ../settings/espm-settings.c:1404 ../settings/espm-settings.c:1456
+#: ../settings/espm-settings.c:1507
 msgid "Do nothing"
 msgstr "Gera ekkert"
 
-#: ../settings/xfpm-settings.c:994 ../settings/xfpm-settings.c:1363
-#: ../src/xfpm-power.c:714
+#: ../settings/espm-settings.c:994 ../settings/espm-settings.c:1363
+#: ../src/espm-power.c:714
 msgid "Shutdown"
 msgstr "Slökkva"
 
-#: ../settings/xfpm-settings.c:998 ../settings/xfpm-settings.c:1367
-#: ../settings/xfpm-settings.c:1419 ../settings/xfpm-settings.c:1471
-#: ../settings/xfpm-settings.c:1522
+#: ../settings/espm-settings.c:998 ../settings/espm-settings.c:1367
+#: ../settings/espm-settings.c:1419 ../settings/espm-settings.c:1471
+#: ../settings/espm-settings.c:1522
 msgid "Ask"
 msgstr "Spyrja"
 
-#: ../settings/xfpm-settings.c:1039 ../settings/xfpm-settings.c:1227
+#: ../settings/espm-settings.c:1039 ../settings/espm-settings.c:1227
 msgid "Switch off display"
 msgstr "Slökkva á skjá"
 
-#: ../settings/xfpm-settings.c:1054 ../settings/xfpm-settings.c:1242
+#: ../settings/espm-settings.c:1054 ../settings/espm-settings.c:1242
 msgid "Lock screen"
 msgstr "Læsa skjá"
 
-#: ../settings/xfpm-settings.c:1551
+#: ../settings/espm-settings.c:1551
 msgid "Number of brightness steps available using keys"
 msgstr ""
 
-#: ../settings/xfpm-settings.c:1591
+#: ../settings/espm-settings.c:1591
 msgid "When all the power sources of the computer reach this charge level"
 msgstr "Þegar allar afluppsprettur tölvunnar ná þessu hleðslustigi"
 
-#: ../settings/xfpm-settings.c:1667 ../common/xfpm-power-common.c:139
+#: ../settings/espm-settings.c:1667 ../common/espm-power-common.c:139
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] "mínúta"
 msgstr[1] "mínútur"
 
-#: ../settings/xfpm-settings.c:2023
+#: ../settings/espm-settings.c:2023
 msgid "Device"
 msgstr "Tæki"
 
-#: ../settings/xfpm-settings.c:2045
+#: ../settings/espm-settings.c:2045
 msgid "Type"
 msgstr "Tegund"
 
-#: ../settings/xfpm-settings.c:2050
+#: ../settings/espm-settings.c:2050
 msgid "PowerSupply"
 msgstr "Aflgjafi"
 
-#: ../settings/xfpm-settings.c:2051 ../src/xfpm-main.c:77
+#: ../settings/espm-settings.c:2051 ../src/espm-main.c:77
 msgid "True"
 msgstr "Satt"
 
-#: ../settings/xfpm-settings.c:2051 ../src/xfpm-main.c:77
+#: ../settings/espm-settings.c:2051 ../src/espm-main.c:77
 msgid "False"
 msgstr "Rangt"
 
-#: ../settings/xfpm-settings.c:2058
+#: ../settings/espm-settings.c:2058
 msgid "Model"
 msgstr "Tegund"
 
-#: ../settings/xfpm-settings.c:2061
+#: ../settings/espm-settings.c:2061
 msgid "Technology"
 msgstr "Tækni"
 
-#: ../settings/xfpm-settings.c:2068
+#: ../settings/espm-settings.c:2068
 msgid "Current charge"
 msgstr "Núverandi hleðsla"
 
 #. TRANSLATORS: Unit here is Watt hour
-#: ../settings/xfpm-settings.c:2076 ../settings/xfpm-settings.c:2088
-#: ../settings/xfpm-settings.c:2100
+#: ../settings/espm-settings.c:2076 ../settings/espm-settings.c:2088
+#: ../settings/espm-settings.c:2100
 msgid "Wh"
 msgstr "Wh"
 
-#: ../settings/xfpm-settings.c:2078
+#: ../settings/espm-settings.c:2078
 msgid "Fully charged (design)"
 msgstr "Fullhlaðið (design)"
 
-#: ../settings/xfpm-settings.c:2091
+#: ../settings/espm-settings.c:2091
 msgid "Fully charged"
 msgstr "Full hleðsla"
 
-#: ../settings/xfpm-settings.c:2102
+#: ../settings/espm-settings.c:2102
 msgid "Energy empty"
 msgstr "Orka búin"
 
 #. TRANSLATORS: Unit here is Volt
-#: ../settings/xfpm-settings.c:2110
+#: ../settings/espm-settings.c:2110
 msgid "V"
 msgstr "V"
 
-#: ../settings/xfpm-settings.c:2112
+#: ../settings/espm-settings.c:2112
 msgid "Voltage"
 msgstr "Spenna"
 
-#: ../settings/xfpm-settings.c:2119
+#: ../settings/espm-settings.c:2119
 msgid "Vendor"
 msgstr "Framleiðandi"
 
-#: ../settings/xfpm-settings.c:2124
+#: ../settings/espm-settings.c:2124
 msgid "Serial"
 msgstr "Raðnúmer"
 
-#: ../settings/xfpm-settings.c:2400
+#: ../settings/espm-settings.c:2400
 msgid "Check your power manager installation"
 msgstr "Athugaðu hvort það sé allt í lagi með uppsetningu orkustjórnunar"
 
-#: ../settings/xfpm-settings.c:2493
+#: ../settings/espm-settings.c:2493
 msgid "Devices"
 msgstr "Tæki"
 
-#: ../settings/xfpm-settings-app.c:74
+#: ../settings/espm-settings-app.c:74
 msgid "Settings manager socket"
 msgstr "Sökkull stillingastjórnunar"
 
-#: ../settings/xfpm-settings-app.c:74
+#: ../settings/espm-settings-app.c:74
 msgid "SOCKET ID"
 msgstr "AUÐKENNI SÖKKULS - ID"
 
-#: ../settings/xfpm-settings-app.c:75
+#: ../settings/espm-settings-app.c:75
 msgid "Display a specific device by UpDevice object path"
 msgstr "Birta tiltekið tæki eftir slóð á UpDevice-hluta"
 
-#: ../settings/xfpm-settings-app.c:75
+#: ../settings/espm-settings-app.c:75
 msgid "UpDevice object path"
 msgstr "Slóð á UpDevice-hluta"
 
-#: ../settings/xfpm-settings-app.c:76 ../src/xfpm-main.c:273
+#: ../settings/espm-settings-app.c:76 ../src/espm-main.c:273
 msgid "Enable debugging"
 msgstr "Virkja afslúsun"
 
-#: ../settings/xfpm-settings-app.c:77
+#: ../settings/espm-settings-app.c:77
 msgid "Display version information"
 msgstr "Birta útgáfuupplýsingar"
 
-#: ../settings/xfpm-settings-app.c:78
-msgid "Cause xfce4-power-manager-settings to quit"
-msgstr "Láta xfce4-power-manager-settings hætta"
+#: ../settings/espm-settings-app.c:78
+msgid "Cause expidus1-power-manager-settings to quit"
+msgstr "Láta expidus1-power-manager-settings hætta"
 
-#: ../settings/xfpm-settings-app.c:176
+#: ../settings/espm-settings-app.c:176
 msgid "Failed to connect to power manager"
 msgstr "Mistókst að tengjast orkustýringu"
 
-#: ../settings/xfpm-settings-app.c:190
-msgid "Xfce4 Power Manager is not running, do you want to launch it now?"
-msgstr "XFCE orkustjórnun er ekki keyrandi, viltu ræsa hana núna?"
+#: ../settings/espm-settings-app.c:190
+msgid "Expidus1 Power Manager is not running, do you want to launch it now?"
+msgstr "EXPIDUS orkustjórnun er ekki keyrandi, viltu ræsa hana núna?"
 
-#: ../settings/xfpm-settings-app.c:223
+#: ../settings/espm-settings-app.c:223
 msgid "Failed to load power manager configuration, using defaults"
 msgstr "Mistókst að hlaða inn stillingum orkustýringar, nota sjálfgefnar"
 
-#: ../settings/xfpm-settings-app.c:356
+#: ../settings/espm-settings-app.c:356
 #, c-format
-msgid "This is %s version %s, running on Xfce %s.\n"
-msgstr "Þetta er %s útgáfa %s, keyrir á Xfce %s.\n\n"
+msgid "This is %s version %s, running on Expidus %s.\n"
+msgstr "Þetta er %s útgáfa %s, keyrir á Expidus %s.\n\n"
 
-#: ../settings/xfpm-settings-app.c:358
+#: ../settings/espm-settings-app.c:358
 #, c-format
 msgid "Built with GTK+ %d.%d.%d, linked with GTK+ %d.%d.%d."
 msgstr "Byggt með GTK+ %d.%d.%d, tengt með GTK+ %d.%d.%d."
 
-#: ../settings/xfce4-power-manager-settings.desktop.in.h:1
-#: ../src/xfpm-power.c:358 ../src/xfpm-power.c:635 ../src/xfpm-power.c:678
-#: ../src/xfpm-power.c:841 ../src/xfpm-power.c:863 ../src/xfpm-backlight.c:166
-#: ../src/xfpm-battery.c:190 ../src/xfpm-kbd-backlight.c:114
-#: ../src/xfce4-power-manager.desktop.in.h:1
+#: ../settings/expidus1-power-manager-settings.desktop.in.h:1
+#: ../src/espm-power.c:358 ../src/espm-power.c:635 ../src/espm-power.c:678
+#: ../src/espm-power.c:841 ../src/espm-power.c:863 ../src/espm-backlight.c:166
+#: ../src/espm-battery.c:190 ../src/espm-kbd-backlight.c:114
+#: ../src/expidus1-power-manager.desktop.in.h:1
 msgid "Power Manager"
 msgstr "Aflstjórnun"
 
-#: ../settings/xfce4-power-manager-settings.desktop.in.h:2
-msgid "Settings for the Xfce Power Manager"
-msgstr "Stillingar fyrir XFCE aflstjórnun"
+#: ../settings/expidus1-power-manager-settings.desktop.in.h:2
+msgid "Settings for the Expidus Power Manager"
+msgstr "Stillingar fyrir EXPIDUS aflstjórnun"
 
-#: ../settings/xfce4-power-manager-settings.desktop.in.h:3
+#: ../settings/expidus1-power-manager-settings.desktop.in.h:3
 msgid ""
 "settings;preferences;buttons;sleep;hibernate;battery;suspend;shutdown;brightness;laptop"
 " lid;lock screen;plugged in;saving;critical;"
 msgstr ""
 
-#: ../common/xfpm-common.c:116
+#: ../common/espm-common.c:116
 msgid "translator-credits"
 msgstr "Sveinn í Felli, sv1@fellsnet.is"
 
-#: ../common/xfpm-power-common.c:45 ../common/xfpm-power-common.c:68
+#: ../common/espm-power-common.c:45 ../common/espm-power-common.c:68
 msgid "Battery"
 msgstr "Rafhlaða"
 
-#: ../common/xfpm-power-common.c:47
+#: ../common/espm-power-common.c:47
 msgid "Uninterruptible Power Supply"
 msgstr "UPS varaaflgjafi"
 
-#: ../common/xfpm-power-common.c:49
+#: ../common/espm-power-common.c:49
 msgid "Line power"
 msgstr "Rafkerfi"
 
-#: ../common/xfpm-power-common.c:51
+#: ../common/espm-power-common.c:51
 msgid "Mouse"
 msgstr "Mús"
 
-#: ../common/xfpm-power-common.c:53
+#: ../common/espm-power-common.c:53
 msgid "Keyboard"
 msgstr "Lyklaborð"
 
-#: ../common/xfpm-power-common.c:55
+#: ../common/espm-power-common.c:55
 msgid "Monitor"
 msgstr "Skjár"
 
-#: ../common/xfpm-power-common.c:57
+#: ../common/espm-power-common.c:57
 msgid "PDA"
 msgstr "PDA lófatölva"
 
-#: ../common/xfpm-power-common.c:59
+#: ../common/espm-power-common.c:59
 msgid "Phone"
 msgstr "Sími"
 
-#: ../common/xfpm-power-common.c:61
+#: ../common/espm-power-common.c:61
 msgid "Tablet"
 msgstr "Spjaldtölva"
 
-#: ../common/xfpm-power-common.c:63 ../common/xfpm-power-common.c:255
+#: ../common/espm-power-common.c:63 ../common/espm-power-common.c:255
 msgid "Computer"
 msgstr "Tölva"
 
-#: ../common/xfpm-power-common.c:65 ../common/xfpm-power-common.c:81
-#: ../common/xfpm-power-common.c:96
+#: ../common/espm-power-common.c:65 ../common/espm-power-common.c:81
+#: ../common/espm-power-common.c:96
 msgid "Unknown"
 msgstr "Óþekkt"
 
-#: ../common/xfpm-power-common.c:83
+#: ../common/espm-power-common.c:83
 msgid "Lithium ion"
 msgstr "Liþíum-jóna"
 
-#: ../common/xfpm-power-common.c:85
+#: ../common/espm-power-common.c:85
 msgid "Lithium polymer"
 msgstr "Liþíum-pólýmer"
 
-#: ../common/xfpm-power-common.c:87
+#: ../common/espm-power-common.c:87
 msgid "Lithium iron phosphate"
 msgstr "Liþíum-járnfosfat"
 
-#: ../common/xfpm-power-common.c:89
+#: ../common/espm-power-common.c:89
 msgid "Lead acid"
 msgstr "Blýsýra"
 
-#: ../common/xfpm-power-common.c:91
+#: ../common/espm-power-common.c:91
 msgid "Nickel cadmium"
 msgstr "Nikkel-kadmíum"
 
-#: ../common/xfpm-power-common.c:93
+#: ../common/espm-power-common.c:93
 msgid "Nickel metal hydride"
 msgstr ""
 
-#: ../common/xfpm-power-common.c:114
+#: ../common/espm-power-common.c:114
 msgid "Unknown time"
 msgstr "Óþekktur tími"
 
-#: ../common/xfpm-power-common.c:120
+#: ../common/espm-power-common.c:120
 #, c-format
 msgid "%i minute"
 msgid_plural "%i minutes"
 msgstr[0] "%i mínúta"
 msgstr[1] "%i mínútur"
 
-#: ../common/xfpm-power-common.c:131
+#: ../common/espm-power-common.c:131
 #, c-format
 msgid "%i hour"
 msgid_plural "%i hours"
@@ -562,81 +562,81 @@ msgstr[1] "%i klukkustundir"
 
 #. TRANSLATOR: "%i %s %i %s" are "%i hours %i minutes"
 #. * Swap order with "%2$s %2$i %1$s %1$i if needed
-#: ../common/xfpm-power-common.c:137
+#: ../common/espm-power-common.c:137
 #, c-format
 msgid "%i %s %i %s"
 msgstr "%i %s %i %s"
 
-#: ../common/xfpm-power-common.c:138
+#: ../common/espm-power-common.c:138
 msgid "hour"
 msgid_plural "hours"
 msgstr[0] "klukkustund"
 msgstr[1] "klukkustundir"
 
-#: ../common/xfpm-power-common.c:295
+#: ../common/espm-power-common.c:295
 #, c-format
 msgid ""
 "<b>%s %s</b>\n"
 "Fully charged (%0.0f%%, %s runtime)"
 msgstr "<b>%s %s</b>\nFullhlaðið (%0.0f%%, %s runtime)"
 
-#: ../common/xfpm-power-common.c:303
+#: ../common/espm-power-common.c:303
 #, c-format
 msgid ""
 "<b>%s %s</b>\n"
 "Fully charged (%0.0f%%)"
 msgstr "<b>%s %s</b>\nFullhlaðið (%0.0f%%)"
 
-#: ../common/xfpm-power-common.c:313
+#: ../common/espm-power-common.c:313
 #, c-format
 msgid ""
 "<b>%s %s</b>\n"
 "Charging (%0.0f%%, %s)"
 msgstr "<b>%s %s</b>\nHleðsla (%0.0f%%, %s)"
 
-#: ../common/xfpm-power-common.c:321
+#: ../common/espm-power-common.c:321
 #, c-format
 msgid ""
 "<b>%s %s</b>\n"
 "Charging (%0.0f%%)"
 msgstr "<b>%s %s</b>\nHleðsla (%0.0f%%)"
 
-#: ../common/xfpm-power-common.c:331
+#: ../common/espm-power-common.c:331
 #, c-format
 msgid ""
 "<b>%s %s</b>\n"
 "Discharging (%0.0f%%, %s)"
 msgstr "<b>%s %s</b>\nAfhleðst (%0.0f%%, %s)"
 
-#: ../common/xfpm-power-common.c:339
+#: ../common/espm-power-common.c:339
 #, c-format
 msgid ""
 "<b>%s %s</b>\n"
 "Discharging (%0.0f%%)"
 msgstr "<b>%s %s</b>\nAfhleðst (%0.0f%%)"
 
-#: ../common/xfpm-power-common.c:346
+#: ../common/espm-power-common.c:346
 #, c-format
 msgid ""
 "<b>%s %s</b>\n"
 "Waiting to discharge (%0.0f%%)"
 msgstr "<b>%s %s</b>\nBíður eftir að afhlaðast (%0.0f%%)"
 
-#: ../common/xfpm-power-common.c:352
+#: ../common/espm-power-common.c:352
 #, c-format
 msgid ""
 "<b>%s %s</b>\n"
 "Waiting to charge (%0.0f%%)"
 msgstr "<b>%s %s</b>\nBíður eftir hleðslu (%0.0f%%)"
 
-#: ../common/xfpm-power-common.c:358
+#: ../common/espm-power-common.c:358
 #, c-format
 msgid ""
 "<b>%s %s</b>\n"
 "is empty"
 msgstr "<b>%s %s</b>\ner tómt"
 
-#: ../common/xfpm-power-common.c:363
+#: ../common/espm-power-common.c:363
 #, c-format
 msgid ""
 "<b>%s %s</b>\n"
@@ -645,285 +645,285 @@ msgstr "<b>%s %s</b>\nNúverandi hleðsla: %0.0f%%"
 
 #. On the 2nd line we want to know if the power cord is plugged
 #. * in or not
-#: ../common/xfpm-power-common.c:373
+#: ../common/espm-power-common.c:373
 #, c-format
 msgid ""
 "<b>%s %s</b>\n"
 "%s"
 msgstr "<b>%s %s</b>\n%s"
 
-#: ../common/xfpm-power-common.c:374
+#: ../common/espm-power-common.c:374
 msgid "Not plugged in"
 msgstr "Ekki í sambandi"
 
 #. Desktop pc with no battery, just display the vendor and model,
 #. * which will probably just be Computer
-#: ../common/xfpm-power-common.c:380
+#: ../common/espm-power-common.c:380
 #, c-format
 msgid "<b>%s %s</b>"
 msgstr "<b>%s %s</b>"
 
 #. unknown device state, just display the percentage
-#: ../common/xfpm-power-common.c:385
+#: ../common/espm-power-common.c:385
 #, c-format
 msgid ""
 "<b>%s %s</b>\n"
 "Unknown state"
 msgstr "<b>%s %s</b>\nÓþekkt staða"
 
-#: ../src/xfpm-power.c:385
+#: ../src/espm-power.c:385
 msgid ""
 "An application is currently disabling the automatic sleep. Doing this action now may damage the working state of this application.\n"
 "Are you sure you want to hibernate the system?"
 msgstr ""
 
-#: ../src/xfpm-power.c:434
+#: ../src/espm-power.c:434
 msgid ""
 "None of the screen lock tools ran successfully, the screen will not be locked.\n"
 "Do you still want to continue to suspend the system?"
 msgstr "Ekki tókst að keyra neitt af skjálæsiverkfærunum, skjánum verður ekki læst.\nViltu samt halda áfram við að setja kerfið í bið?"
 
-#: ../src/xfpm-power.c:599
+#: ../src/espm-power.c:599
 msgid "Hibernate the system"
 msgstr "Leggja kerfi í dvala"
 
-#: ../src/xfpm-power.c:610
+#: ../src/espm-power.c:610
 msgid "Suspend the system"
 msgstr "Setja tölvuna í bið"
 
-#: ../src/xfpm-power.c:619
+#: ../src/espm-power.c:619
 msgid "Shutdown the system"
 msgstr "Slökkva á kerfinu"
 
-#: ../src/xfpm-power.c:630 ../src/xfpm-power.c:675
+#: ../src/espm-power.c:630 ../src/espm-power.c:675
 msgid "System is running on low power. Save your work to avoid losing data"
 msgstr "Kerfið á lítið rafmagn eftir. Vistaðu skjölin þín svo að gögn tapist ekki"
 
-#: ../src/xfpm-power.c:721
+#: ../src/espm-power.c:721
 msgid "_Cancel"
 msgstr "_Hætta við"
 
-#: ../src/xfpm-power.c:842
+#: ../src/espm-power.c:842
 msgid "System is running on low power"
 msgstr "Kerfið á lítið rafmagn eftir"
 
-#: ../src/xfpm-power.c:859
+#: ../src/espm-power.c:859
 #, c-format
 msgid ""
 "Your %s charge level is low\n"
 "Estimated time left %s"
 msgstr "Hleðsla á %s er lítil\nÁætlaður tími eftir %s"
 
-#: ../src/xfpm-power.c:1644 ../src/xfpm-power.c:1692 ../src/xfpm-power.c:1724
-#: ../src/xfpm-power.c:1754
+#: ../src/espm-power.c:1644 ../src/espm-power.c:1692 ../src/espm-power.c:1724
+#: ../src/espm-power.c:1754
 msgid "Permission denied"
 msgstr "Aðgangi hafnað"
 
-#: ../src/xfpm-power.c:1733 ../src/xfpm-power.c:1763
+#: ../src/espm-power.c:1733 ../src/espm-power.c:1763
 msgid "Suspend not supported"
 msgstr "'Setja í bið' ekki stutt"
 
 #. generate a human-readable summary for the notification
-#: ../src/xfpm-backlight.c:164
+#: ../src/espm-backlight.c:164
 #, c-format
 msgid "Brightness: %.0f percent"
 msgstr "Birtustig: %.0f prósent"
 
-#: ../src/xfpm-battery.c:109 ../src/xfpm-battery.c:160
+#: ../src/espm-battery.c:109 ../src/espm-battery.c:160
 #, c-format
 msgid "Your %s is fully charged"
 msgstr "%s er fullhlaðið"
 
-#: ../src/xfpm-battery.c:112 ../src/xfpm-battery.c:163
+#: ../src/espm-battery.c:112 ../src/espm-battery.c:163
 #, c-format
 msgid "Your %s is charging"
 msgstr "%s er í hleðslu"
 
-#: ../src/xfpm-battery.c:122
+#: ../src/espm-battery.c:122
 #, c-format
 msgid ""
 "%s (%i%%)\n"
 "%s until fully charged"
 msgstr "%s (%i%%)\n%s þar til fullhlaðið"
 
-#: ../src/xfpm-battery.c:130 ../src/xfpm-battery.c:166
+#: ../src/espm-battery.c:130 ../src/espm-battery.c:166
 #, c-format
 msgid "Your %s is discharging"
 msgstr "%s afhleðst"
 
-#: ../src/xfpm-battery.c:132
+#: ../src/espm-battery.c:132
 #, c-format
 msgid "System is running on %s power"
 msgstr "Kerfið er tengt við %s rafmagn"
 
-#: ../src/xfpm-battery.c:142
+#: ../src/espm-battery.c:142
 #, c-format
 msgid ""
 "%s (%i%%)\n"
 "Estimated time left is %s"
 msgstr "%s (%i%%)\nÁætlaður tími eftir er %s"
 
-#: ../src/xfpm-battery.c:148 ../src/xfpm-battery.c:169
+#: ../src/espm-battery.c:148 ../src/espm-battery.c:169
 #, c-format
 msgid "Your %s is empty"
 msgstr "%s er tæmd"
 
 #. generate a human-readable summary for the notification
-#: ../src/xfpm-kbd-backlight.c:112
+#: ../src/espm-kbd-backlight.c:112
 #, c-format
 msgid "Keyboard Brightness: %.0f percent"
 msgstr "Birta lyklaborðs: %.0f prósent"
 
-#: ../src/xfpm-main.c:54
+#: ../src/espm-main.c:54
 #, c-format
 msgid ""
 "\n"
-"Xfce Power Manager %s\n"
+"Expidus Power Manager %s\n"
 "\n"
-"Part of the Xfce Goodies Project\n"
-"http://goodies.xfce.org\n"
+"Part of the Expidus Goodies Project\n"
+"http://goodies.expidus.org\n"
 "\n"
 "Licensed under the GNU GPL.\n"
 "\n"
-msgstr "\nXFCE aflstjórnun %s\n\nHluti af Xfce Goodies verkefninu\nhttp://goodies.xfce.org\n\nGefið út með GNU GPL notkunarleyfi.\n\n"
+msgstr "\nEXPIDUS aflstjórnun %s\n\nHluti af Expidus Goodies verkefninu\nhttp://goodies.expidus.org\n\nGefið út með GNU GPL notkunarleyfi.\n\n"
 
-#: ../src/xfpm-main.c:112
+#: ../src/espm-main.c:112
 #, c-format
 msgid "With policykit support\n"
 msgstr "Með policykit stuðningi\n"
 
-#: ../src/xfpm-main.c:114
+#: ../src/espm-main.c:114
 #, c-format
 msgid "Without policykit support\n"
 msgstr "Án policykit stuðnings\n"
 
-#: ../src/xfpm-main.c:117
+#: ../src/espm-main.c:117
 #, c-format
 msgid "With network manager support\n"
 msgstr "Með stuðningi við netstýringu\n"
 
-#: ../src/xfpm-main.c:119
+#: ../src/espm-main.c:119
 #, c-format
 msgid "Without network manager support\n"
 msgstr "Án stuðnings við netstýringu\n"
 
-#: ../src/xfpm-main.c:134
+#: ../src/espm-main.c:134
 msgid "Can suspend"
 msgstr "Getur sett í bið"
 
-#: ../src/xfpm-main.c:136
+#: ../src/espm-main.c:136
 msgid "Can hibernate"
 msgstr "Getur lagt í dvala"
 
-#: ../src/xfpm-main.c:138
+#: ../src/espm-main.c:138
 msgid "Authorized to suspend"
 msgstr "Hefur heimild til að setja í bið"
 
-#: ../src/xfpm-main.c:140
+#: ../src/espm-main.c:140
 msgid "Authorized to hibernate"
 msgstr "Hefur heimild til að leggja í dvala"
 
-#: ../src/xfpm-main.c:142
+#: ../src/espm-main.c:142
 msgid "Authorized to shutdown"
 msgstr "Hefur heimild til að slökkva á tölvu"
 
-#: ../src/xfpm-main.c:144
+#: ../src/espm-main.c:144
 msgid "Has battery"
 msgstr "Er með rafhlöðu"
 
-#: ../src/xfpm-main.c:146
+#: ../src/espm-main.c:146
 msgid "Has brightness panel"
 msgstr "Er með birtustigsstiku"
 
-#: ../src/xfpm-main.c:148
+#: ../src/espm-main.c:148
 msgid "Has power button"
 msgstr "Er með Kveikja/Slökkva-hnapp"
 
-#: ../src/xfpm-main.c:150
+#: ../src/espm-main.c:150
 msgid "Has hibernate button"
 msgstr "Er með 'Leggja í dvala'-hnapp"
 
-#: ../src/xfpm-main.c:152
+#: ../src/espm-main.c:152
 msgid "Has sleep button"
 msgstr "Er með svæfingarhnapp"
 
-#: ../src/xfpm-main.c:154
+#: ../src/espm-main.c:154
 msgid "Has battery button"
 msgstr "Er með rafhlöðuhnapp"
 
-#: ../src/xfpm-main.c:156
+#: ../src/espm-main.c:156
 msgid "Has LID"
 msgstr "Hefur LID"
 
-#: ../src/xfpm-main.c:272
+#: ../src/espm-main.c:272
 msgid "Do not daemonize"
 msgstr "Ekki gera ferlið að bakgrunnsþjónustu (púka)"
 
-#: ../src/xfpm-main.c:274
+#: ../src/espm-main.c:274
 msgid "Dump all information"
 msgstr "Demba öllum upplýsingum"
 
-#: ../src/xfpm-main.c:275
-msgid "Restart the running instance of Xfce power manager"
-msgstr "Endurræsa eintak XFCE-orkustýringarinnar sem er í gangi"
+#: ../src/espm-main.c:275
+msgid "Restart the running instance of Expidus power manager"
+msgstr "Endurræsa eintak EXPIDUS-orkustýringarinnar sem er í gangi"
 
-#: ../src/xfpm-main.c:276
+#: ../src/espm-main.c:276
 msgid "Show the configuration dialog"
 msgstr "Birta stillingagluggann"
 
-#: ../src/xfpm-main.c:277
-msgid "Quit any running xfce power manager"
-msgstr "Hætta í öllum tilvikum XFCE-orkustýringarinnar sem eru í gangi"
+#: ../src/espm-main.c:277
+msgid "Quit any running expidus power manager"
+msgstr "Hætta í öllum tilvikum EXPIDUS-orkustýringarinnar sem eru í gangi"
 
-#: ../src/xfpm-main.c:278
+#: ../src/espm-main.c:278
 msgid "Version information"
 msgstr "Útgáfuupplýsingar"
 
-#: ../src/xfpm-main.c:295
+#: ../src/espm-main.c:295
 #, c-format
 msgid "Failed to parse arguments: %s\n"
 msgstr "Mistókst að þátta viðföng: %s\n"
 
-#: ../src/xfpm-main.c:323
+#: ../src/espm-main.c:323
 #, c-format
 msgid "Type '%s --help' for usage."
 msgstr "Skrifaðu '%s --help' til að sjá hvernig á að nota þetta."
 
-#: ../src/xfpm-main.c:344
+#: ../src/espm-main.c:344
 msgid "Unable to get connection to the message bus session"
 msgstr "Tókst ekki að ná sambandi við setu tilkynningakerfis"
 
-#: ../src/xfpm-main.c:352
+#: ../src/espm-main.c:352
 #, c-format
-msgid "Xfce power manager is not running"
-msgstr "XFCE orkustjórnun er ekki keyrandi"
+msgid "Expidus power manager is not running"
+msgstr "EXPIDUS orkustjórnun er ekki keyrandi"
 
-#: ../src/xfpm-main.c:442
+#: ../src/espm-main.c:442
 msgid "Another power manager is already running"
 msgstr "Önnur orkustýring er þegar í keyrslu"
 
-#: ../src/xfpm-main.c:446
+#: ../src/espm-main.c:446
 #, c-format
-msgid "Xfce power manager is already running"
-msgstr "XFCE orkustjórnun er þegar keyrandi"
+msgid "Expidus power manager is already running"
+msgstr "EXPIDUS orkustjórnun er þegar keyrandi"
 
-#: ../src/xfpm-inhibit.c:396
+#: ../src/espm-inhibit.c:396
 msgid "Invalid arguments"
 msgstr "Ógildar breytur"
 
-#: ../src/xfpm-inhibit.c:430
+#: ../src/espm-inhibit.c:430
 msgid "Invalid cookie"
 msgstr "Ógild smákaka"
 
-#: ../src/xfpm-manager.c:456
+#: ../src/espm-manager.c:456
 msgid ""
 "None of the screen lock tools ran successfully, the screen will not be "
 "locked."
 msgstr "Ekki tókst að keyra neitt af skjálæsiverkfærunum, skjánum verður ekki læst."
 
-#: ../src/xfce4-power-manager.desktop.in.h:2
-msgid "Power management for the Xfce desktop"
-msgstr "Orkustýring fyrir XFCE-skjáborðsumhverfið"
+#: ../src/expidus1-power-manager.desktop.in.h:2
+msgid "Power management for the Expidus desktop"
+msgstr "Orkustýring fyrir EXPIDUS-skjáborðsumhverfið"
 
 #. Odds are this is a desktop without any batteries attached
 #: ../panel-plugins/power-manager-plugin/power-manager-button.c:289
@@ -952,61 +952,61 @@ msgstr "Kynningar_hamur"
 msgid "_Power manager settings..."
 msgstr "Stillingar _orkustjórnunar..."
 
-#: ../panel-plugins/power-manager-plugin/xfce/xfce-power-manager-plugin.c:78
+#: ../panel-plugins/power-manager-plugin/expidus/expidus-power-manager-plugin.c:78
 #, c-format
 msgid "Unable to open the following url: %s"
 msgstr "Tókst ekki að opna eftirfarandi slóð: %s"
 
-#: ../panel-plugins/power-manager-plugin/xfce/xfce-power-manager-plugin.c:150
+#: ../panel-plugins/power-manager-plugin/expidus/expidus-power-manager-plugin.c:150
 msgid "None"
 msgstr "Enginn"
 
-#: ../panel-plugins/power-manager-plugin/xfce/xfce-power-manager-plugin.c:150
+#: ../panel-plugins/power-manager-plugin/expidus/expidus-power-manager-plugin.c:150
 msgid "Percentage"
 msgstr "Prósentuhlutfall"
 
-#: ../panel-plugins/power-manager-plugin/xfce/xfce-power-manager-plugin.c:150
+#: ../panel-plugins/power-manager-plugin/expidus/expidus-power-manager-plugin.c:150
 msgid "Remaining time"
 msgstr "Tími eftir"
 
-#: ../panel-plugins/power-manager-plugin/xfce/xfce-power-manager-plugin.c:150
+#: ../panel-plugins/power-manager-plugin/expidus/expidus-power-manager-plugin.c:150
 msgid "Percentage and remaining time"
 msgstr "Birta prósentuhlutfall og tími sem er eftir"
 
 #. create the dialog
-#: ../panel-plugins/power-manager-plugin/xfce/xfce-power-manager-plugin.c:158
+#: ../panel-plugins/power-manager-plugin/expidus/expidus-power-manager-plugin.c:158
 msgid "Power Manager Plugin Settings"
 msgstr "Stillingar orkustjórnunarviðbótar"
 
 #. show-panel-label setting
-#: ../panel-plugins/power-manager-plugin/xfce/xfce-power-manager-plugin.c:181
+#: ../panel-plugins/power-manager-plugin/expidus/expidus-power-manager-plugin.c:181
 msgid "Show label:"
 msgstr "Birta merkingu:"
 
-#: ../panel-plugins/power-manager-plugin/xfce/xfce-power-manager-plugin.c:214
+#: ../panel-plugins/power-manager-plugin/expidus/expidus-power-manager-plugin.c:214
 msgid "Show 'Presentation mode' indicator:"
 msgstr ""
 
-#: ../panel-plugins/power-manager-plugin/xfce/power-manager-plugin.desktop.in.in.h:1
+#: ../panel-plugins/power-manager-plugin/expidus/power-manager-plugin.desktop.in.in.h:1
 msgid "Power Manager Plugin"
 msgstr "Orkustjórnunarviðbót"
 
-#: ../panel-plugins/power-manager-plugin/xfce/power-manager-plugin.desktop.in.in.h:2
+#: ../panel-plugins/power-manager-plugin/expidus/power-manager-plugin.desktop.in.in.h:2
 msgid ""
 "Display the battery levels of your devices and control the brightness of "
 "your display"
 msgstr "Birtir stöðu á rafhlöðum fyrir tæki og stýrir birtustigi skjásins"
 
-#: ../data/appdata/xfce4-power-manager.appdata.xml.in.h:1
+#: ../data/appdata/expidus1-power-manager.appdata.xml.in.h:1
 msgid ""
-"Xfce power manager manages the power sources on the computer and the devices"
+"Expidus power manager manages the power sources on the computer and the devices"
 " that can be controlled to reduce their power consumption (such as LCD "
 "brightness level, monitor sleep, CPU frequency scaling)."
-msgstr "Xfce-orkustýringin stjórnar afluppsprettum á tölvunni og þeim tækjum þar sem hægt er að stjórna orkunýtingu (svo sem birtustigi LCD-skjás, skjásvæfingu, tíðnikvörðun CPU-örgjörva, o.þ.h.)."
+msgstr "Expidus-orkustýringin stjórnar afluppsprettum á tölvunni og þeim tækjum þar sem hægt er að stjórna orkunýtingu (svo sem birtustigi LCD-skjás, skjásvæfingu, tíðnikvörðun CPU-örgjörva, o.þ.h.)."
 
-#: ../data/appdata/xfce4-power-manager.appdata.xml.in.h:2
+#: ../data/appdata/expidus1-power-manager.appdata.xml.in.h:2
 msgid ""
-"In addition, Xfce power manager provides a set of freedesktop-compliant DBus"
+"In addition, Expidus power manager provides a set of freedesktop-compliant DBus"
 " interfaces to inform other applications about current power level so that "
 "they can adjust their power consumption, and it provides the inhibit "
 "interface which allows applications to prevent automatic sleep actions via "
@@ -1014,14 +1014,14 @@ msgid ""
 "should make use of this interface while it is performing update operations."
 msgstr ""
 
-#: ../data/appdata/xfce4-power-manager.appdata.xml.in.h:3
+#: ../data/appdata/expidus1-power-manager.appdata.xml.in.h:3
 msgid ""
-"Xfce power manager also provides a plugin for the Xfce and LXDE panels to "
+"Expidus power manager also provides a plugin for the Expidus and LXDE panels to "
 "control LCD brightness levels and to monitor battery and device charge "
 "levels."
 msgstr ""
 
-#: ../data/appdata/xfce4-power-manager.appdata.xml.in.h:4
+#: ../data/appdata/expidus1-power-manager.appdata.xml.in.h:4
 msgid ""
 "This development release mostly fixes bugs and introduces better support for"
 " icon-themes by reducing the device icons and using standard names for them."
@@ -1029,7 +1029,7 @@ msgid ""
 " Power Manager Plugin."
 msgstr ""
 
-#: ../data/appdata/xfce4-power-manager.appdata.xml.in.h:5
+#: ../data/appdata/expidus1-power-manager.appdata.xml.in.h:5
 msgid ""
 "This development release fixes bugs with suspend and hibernate. It also "
 "improves the panel-plugin, incorporating the functionality of the (now "
@@ -1038,7 +1038,7 @@ msgid ""
 "controls the X11 blank times."
 msgstr ""
 
-#: ../data/appdata/xfce4-power-manager.appdata.xml.in.h:6
+#: ../data/appdata/expidus1-power-manager.appdata.xml.in.h:6
 msgid ""
 "This development release introduces a lot of new features, among them "
 "suspending/hibernation without systemd and UPower>=0.99. It allows for "
@@ -1048,7 +1048,7 @@ msgid ""
 "have been fixed and translations have been updated."
 msgstr ""
 
-#: ../data/appdata/xfce4-power-manager.appdata.xml.in.h:7
+#: ../data/appdata/expidus1-power-manager.appdata.xml.in.h:7
 msgid ""
 "This stable release fixes compilation problems, a memory leak and a few "
 "other minor bugs. Furthermore it provides updated translations."

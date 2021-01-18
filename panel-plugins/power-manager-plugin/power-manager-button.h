@@ -1,5 +1,5 @@
 /*
- * * Copyright (C) 2014 Eric Koegel <eric@xfce.org>
+ * * Copyright (C) 2014 Eric Koegel <eric@expidus.org>
  *
  * Licensed under the GNU General Public License Version 2
  *
@@ -23,8 +23,8 @@
 
 #include <glib-object.h>
 #include <gtk/gtk.h>
-#ifdef XFCE_PLUGIN
-#include <libxfce4panel/libxfce4panel.h>
+#ifdef EXPIDUS_PLUGIN
+#include <libexpidus1panel/libexpidus1panel.h>
 #endif
 
 G_BEGIN_DECLS
@@ -52,10 +52,10 @@ typedef struct
 } PowerManagerButtonClass;
 
 GType                    power_manager_button_get_type      (void) G_GNUC_CONST;
-#ifdef XFCE_PLUGIN
-GtkWidget               *power_manager_button_new           (XfcePanelPlugin *plugin);
+#ifdef EXPIDUS_PLUGIN
+GtkWidget               *power_manager_button_new           (ExpidusPanelPlugin *plugin);
 #endif
-#ifdef XFPM_SYSTRAY
+#ifdef ESPM_SYSTRAY
 GtkWidget               *power_manager_button_new           (void);
 #endif
 void                     power_manager_button_show          (PowerManagerButton *button);

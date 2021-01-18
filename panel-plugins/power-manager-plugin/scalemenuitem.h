@@ -1,5 +1,5 @@
 /* -*- c-basic-offset: 2 -*- vi:set ts=2 sts=2 sw=2:
- * * Copyright (C) 2014 Eric Koegel <eric@xfce.org>
+ * * Copyright (C) 2014 Eric Koegel <eric@expidus.org>
  *
  * Licensed under the GNU General Public License Version 2
  *

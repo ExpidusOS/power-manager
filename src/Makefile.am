@@ -1,66 +1,66 @@
-bin_PROGRAMS = xfce4-power-manager
+bin_PROGRAMS = expidus1-power-manager
 
-xfce4_power_manager_SOURCES =                   \
+expidus1_power_manager_SOURCES =                   \
 	$(BUILT_SOURCES)			\
-	xfpm-main.c				\
-	xfpm-manager.c				\
-	xfpm-manager.h				\
-	xfpm-power.c				\
-	xfpm-power.h				\
-	xfpm-battery.c				\
-	xfpm-battery.h				\
-	xfpm-xfconf.c				\
-	xfpm-xfconf.h				\
-	xfpm-console-kit.c			\
-	xfpm-console-kit.h			\
-	xfpm-systemd.c				\
-	xfpm-systemd.h				\
+	espm-main.c				\
+	espm-manager.c				\
+	espm-manager.h				\
+	espm-power.c				\
+	espm-power.h				\
+	espm-battery.c				\
+	espm-battery.h				\
+	espm-esconf.c				\
+	espm-esconf.h				\
+	espm-console-kit.c			\
+	espm-console-kit.h			\
+	espm-systemd.c				\
+	espm-systemd.h				\
 	egg-idletime.c				\
 	egg-idletime.h				\
-	xfpm-backlight.c			\
-	xfpm-backlight.h			\
-	xfpm-kbd-backlight.c			\
-	xfpm-kbd-backlight.h			\
-	xfpm-dpms.c				\
-	xfpm-dpms.h				\
-	xfpm-button.c				\
-	xfpm-button.h				\
-	xfpm-network-manager.c			\
-	xfpm-network-manager.h			\
-	xfpm-inhibit.c				\
-	xfpm-inhibit.h				\
-	xfpm-notify.c				\
-	xfpm-notify.h				\
-	xfpm-polkit.c				\
-	xfpm-polkit.h				\
-	xfpm-errors.c				\
-	xfpm-errors.h				\
-	xfpm-suspend.c				\
-	xfpm-suspend.h				\
-	xfce-screensaver.c			\
-	xfce-screensaver.h			\
+	espm-backlight.c			\
+	espm-backlight.h			\
+	espm-kbd-backlight.c			\
+	espm-kbd-backlight.h			\
+	espm-dpms.c				\
+	espm-dpms.h				\
+	espm-button.c				\
+	espm-button.h				\
+	espm-network-manager.c			\
+	espm-network-manager.h			\
+	espm-inhibit.c				\
+	espm-inhibit.h				\
+	espm-notify.c				\
+	espm-notify.h				\
+	espm-polkit.c				\
+	espm-polkit.h				\
+	espm-errors.c				\
+	espm-errors.h				\
+	espm-suspend.c				\
+	espm-suspend.h				\
+	expidus-screensaver.c			\
+	expidus-screensaver.h			\
 	../panel-plugins/power-manager-plugin/power-manager-button.c	\
 	../panel-plugins/power-manager-plugin/power-manager-button.h	\
 	../panel-plugins/power-manager-plugin/scalemenuitem.c			\
 	../panel-plugins/power-manager-plugin/scalemenuitem.h
 
-xfce4_power_manager_CFLAGS =                    \
+expidus1_power_manager_CFLAGS =                    \
 	-I$(top_srcdir)                         \
 	-I$(top_srcdir)/common                  \
 	-I$(top_srcdir)/libdbus                 \
 	-DLOCALEDIR=\"$(localedir)\"            \
-	-DG_LOG_DOMAIN=\"xfce4-power-manager\"  \
+	-DG_LOG_DOMAIN=\"expidus1-power-manager\"  \
 	-DSYSCONFDIR=\"$(sysconfdir)\"          \
 	-DSBINDIR=\"$(sbindir)\"                \
 	-DUPOWER_ENABLE_DEPRECATED              \
-	-DXFPM_SUSPEND_HELPER_CMD=\"$(prefix)/bin/xfce4-pm-helper\" \
-	-UXFCE_PLUGIN                           \
-	-DXFPM_SYSTRAY							\
+	-DESPM_SUSPEND_HELPER_CMD=\"$(prefix)/bin/expidus1-pm-helper\" \
+	-UEXPIDUS_PLUGIN                           \
+	-DESPM_SYSTRAY							\
 	$(GOBJECT_CFLAGS)                       \
 	$(GTHREAD_CFLAGS)                       \
 	$(DBUS_GLIB_CFLAGS)                     \
-	$(LIBXFCE4UI_CFLAGS)                    \
-	$(XFCONF_CFLAGS)                        \
+	$(LIBEXPIDUS1UI_CFLAGS)                    \
+	$(ESCONF_CFLAGS)                        \
 	$(LIBNOTIFY_CFLAGS)                     \
 	$(UPOWER_CFLAGS)                        \
 	$(XRANDR_CFLAGS)			\
@@ -68,18 +68,18 @@ xfce4_power_manager_CFLAGS =                    \
 	$(PLATFORM_CPPFLAGS)			\
 	$(PLATFORM_CFLAGS)
 
-xfce4_power_manager_LDFLAGS =			\
+expidus1_power_manager_LDFLAGS =			\
 	-no-undefined				\
 	$(PLATFORM_LDFLAGS)
 
-xfce4_power_manager_LDADD =                     \
-	$(top_builddir)/common/libxfpmcommon.la \
-	$(top_builddir)/libdbus/libxfpmdbus.la  \
+expidus1_power_manager_LDADD =                     \
+	$(top_builddir)/common/libespmcommon.la \
+	$(top_builddir)/libdbus/libespmdbus.la  \
 	$(GOBJECT_LIBS)                         \
 	$(GTHREAD_LIBS)                         \
 	$(DBUS_GLIB_LIBS)                       \
-	$(LIBXFCE4UI_LIBS)                      \
-	$(XFCONF_LIBS)                          \
+	$(LIBEXPIDUS1UI_LIBS)                      \
+	$(ESCONF_LIBS)                          \
 	$(LIBNOTIFY_LIBS)                       \
 	$(UPOWER_LIBS)                          \
 	$(XRANDR_LIBS)				\
@@ -87,38 +87,38 @@ xfce4_power_manager_LDADD =                     \
 
 if ENABLE_POLKIT
 
-sbin_PROGRAMS = xfpm-power-backlight-helper     \
-	   xfce4-pm-helper
+sbin_PROGRAMS = espm-power-backlight-helper     \
+	   expidus1-pm-helper
 
-xfpm_power_backlight_helper_SOURCES =           \
-       xfpm-backlight-helper.c
+espm_power_backlight_helper_SOURCES =           \
+       espm-backlight-helper.c
 
-xfpm_power_backlight_helper_LDADD =             \
+espm_power_backlight_helper_LDADD =             \
        $(GLIB_LIBS)                             \
        -lm
 
-xfpm_power_backlight_helper_CFLAGS =            \
+espm_power_backlight_helper_CFLAGS =            \
         $(GLIB_CFLAGS)                          \
 	$(PLATFORM_CPPFLAGS)			\
 	$(PLATFORM_CFLAGS)
 
-xfce4_pm_helper_SOURCES =  \
-	xfpm-pm-helper.c
+expidus1_pm_helper_SOURCES =  \
+	espm-pm-helper.c
 
-xfce4_pm_helper_CFLAGS =   \
+expidus1_pm_helper_CFLAGS =   \
 	-I$(top_srcdir)        \
 	$(GLIB_CFLAGS)         \
 	$(PLATFORM_CPPFLAGS)   \
 	$(PLATFORM_CFLAGS)     \
-	$(LIBXFCE4UTIL_CFLAGS)
+	$(LIBEXPIDUS1UTIL_CFLAGS)
 
-xfce4_pm_helper_LDFLAGS = \
-	$(LIBXFCE4UTIL_LIBS)  \
+expidus1_pm_helper_LDFLAGS = \
+	$(LIBEXPIDUS1UTIL_LIBS)  \
 	$(GLIB_LIBS)
 
 polkit_policydir = $(datadir)/polkit-1/actions
 polkit_policy_DATA =					\
-	org.xfce.power.policy
+	com.expidus.power.policy
 
 # You will need a recent intltool or the patch from this bug
 # http://bugzilla.gnome.org/show_bug.cgi?id=462312
@@ -131,13 +131,13 @@ endif
 
 manpagedir = $(mandir)/man1
 
-manpage_DATA = xfce4-power-manager.1
+manpage_DATA = expidus1-power-manager.1
 
 BUILT_SOURCES =					\
-	xfce-power-manager-dbus.c		\
-	xfce-power-manager-dbus.h		\
-	xfpm-marshal.c                          \
-        xfpm-marshal.h				\
+	expidus-power-manager-dbus.c		\
+	expidus-power-manager-dbus.h		\
+	espm-marshal.c                          \
+        espm-marshal.h				\
 	org.freedesktop.PowerManagement.c       \
 	org.freedesktop.PowerManagement.h       \
 	org.freedesktop.PowerManagement.Inhibit.c \
@@ -145,39 +145,39 @@ BUILT_SOURCES =					\
 
 if MAINTAINER_MODE
 
-xfpm-marshal.c: xfpm-marshal.list
-	echo "#include \"xfpm-marshal.h\"" > $@ && \
-	glib-genmarshal $< --prefix=_xfpm_marshal --body >> $@
+espm-marshal.c: espm-marshal.list
+	echo "#include \"espm-marshal.h\"" > $@ && \
+	glib-genmarshal $< --prefix=_espm_marshal --body >> $@
 
-xfpm-marshal.h: xfpm-marshal.list
-	glib-genmarshal $< --prefix=_xfpm_marshal --header > $@
+espm-marshal.h: espm-marshal.list
+	glib-genmarshal $< --prefix=_espm_marshal --header > $@
 
-xfce-power-manager-dbus.c xfce-power-manager-dbus.h: $(srcdir)/org.xfce.Power.Manager.xml
-	gdbus-codegen --interface-prefix=org.xfce. --c-namespace=Xfpm --generate-c-code=xfce-power-manager-dbus $<
+expidus-power-manager-dbus.c expidus-power-manager-dbus.h: $(srcdir)/com.expidus.Power.Manager.xml
+	gdbus-codegen --interface-prefix=com.expidus. --c-namespace=Espm --generate-c-code=expidus-power-manager-dbus $<
 
 org.freedesktop.PowerManagement.c org.freedesktop.PowerManagement.h: $(srcdir)/org.freedesktop.PowerManagement.xml
-	gdbus-codegen --interface-prefix=org.freedesktop. --c-namespace=Xfpm --generate-c-code=org.freedesktop.PowerManagement $<
+	gdbus-codegen --interface-prefix=org.freedesktop. --c-namespace=Espm --generate-c-code=org.freedesktop.PowerManagement $<
 
 org.freedesktop.PowerManagement.Inhibit.c org.freedesktop.PowerManagement.Inhibit.h: $(srcdir)/org.freedesktop.PowerManagement.Inhibit.xml
-	gdbus-codegen --interface-prefix=org.freedesktop. --c-namespace=Xfpm --generate-c-code=org.freedesktop.PowerManagement.Inhibit $<
+	gdbus-codegen --interface-prefix=org.freedesktop. --c-namespace=Espm --generate-c-code=org.freedesktop.PowerManagement.Inhibit $<
 
 endif
 
 @INTLTOOL_DESKTOP_RULE@
 autostartdir = $(sysconfdir)/xdg/autostart
-autostart_in_files = xfce4-power-manager.desktop.in
+autostart_in_files = expidus1-power-manager.desktop.in
 autostart_DATA = $(autostart_in_files:.desktop.in=.desktop)
 
 EXTRA_DIST =                                    \
-	xfpm-marshal.list			\
+	espm-marshal.list			\
         $(autostart_in_files)                   \
-        org.xfce.power.policy.in2              \
+        com.expidus.power.policy.in2              \
         $(manpage_DATA)
 
 DISTCLEANFILES =                                \
-        xfce4-power-manager.desktop             \
-        org.xfce.power.policy                  \
-        org.xfce.power.policy.in
+        expidus1-power-manager.desktop             \
+        com.expidus.power.policy                  \
+        com.expidus.power.policy.in
 
 MAINTAINERCLEANFILES =                                \
         $(BUILT_SOURCES)

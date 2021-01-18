@@ -1,0 +1,9 @@
+[Desktop Entry]
+_Name=Power Manager
+_Comment=Power management for the Expidus desktop
+Icon=expidus1-power-manager-settings
+Exec=expidus1-power-manager
+Terminal=false
+Type=Application
+NotShowIn=GNOME;KDE;Unity;MATE;LXQt;
+StartupNotify=false

@@ -1,5 +1,5 @@
 interfaces =					\
-	xfpm-settings.ui
+	espm-settings.ui
 
 interfaces_h =					\
 	$(interfaces:.ui=_ui.h)
@@ -8,8 +8,8 @@ if MAINTAINER_MODE
 
 BUILT_SOURCES = $(interfaces_h)
 
-xfpm-settings_ui.h: xfpm-settings.ui
-	xdt-csource --static --strip-comments --strip-content --name=xfpm_settings_ui $< > $@
+espm-settings_ui.h: espm-settings.ui
+	xdt-csource --static --strip-comments --strip-content --name=espm_settings_ui $< > $@
 
 endif
 

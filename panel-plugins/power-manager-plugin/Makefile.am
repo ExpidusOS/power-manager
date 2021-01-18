@@ -1,7 +1,7 @@
 
-if BUILD_XFCE_PLUGIN
-xfce_dir = xfce
+if BUILD_EXPIDUS_PLUGIN
+expidus_dir = expidus
 endif
 
 SUBDIRS =           \
-	$(xfce_dir)
+	$(expidus_dir)

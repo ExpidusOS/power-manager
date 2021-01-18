@@ -1,20 +1,20 @@
 noinst_LTLIBRARIES = 			\
-	libxfpmdbus.la
+	libespmdbus.la
 
-libxfpmdbus_la_SOURCES =		\
-	xfpm-dbus.c			\
-	xfpm-dbus.h			\
-	xfpm-dbus-monitor.c		\
-	xfpm-dbus-monitor.h		\
-	xfpm-dbus-marshal.c		\
-	xfpm-dbus-marshal.h
+libespmdbus_la_SOURCES =		\
+	espm-dbus.c			\
+	espm-dbus.h			\
+	espm-dbus-monitor.c		\
+	espm-dbus-monitor.h		\
+	espm-dbus-marshal.c		\
+	espm-dbus-marshal.h
 	
-libxfpmdbus_la_CFLAGS =			\
+libespmdbus_la_CFLAGS =			\
 	$(GLIB_CFLAGS)			\
-	$(LIBXFCE4UTIL_CFLAGS)		\
+	$(LIBEXPIDUS1UTIL_CFLAGS)		\
 	$(DBUS_GLIB_CFLAGS)
 
-libxfpmdbus_la_LIBADD =			\
+libespmdbus_la_LIBADD =			\
 	$(GLIB_LIBS)			\
 	$(DBUS_GLIB_LIBS)		\
 	$(DBUS_LIBS)
@@ -22,20 +22,20 @@ libxfpmdbus_la_LIBADD =			\
 if MAINTAINER_MODE
 
 BUILT_SOURCES =				\
-	xfpm-dbus-marshal.c		\
-	xfpm-dbus-marshal.h
+	espm-dbus-marshal.c		\
+	espm-dbus-marshal.h
 
-xfpm-dbus-marshal.c: xfpm-dbus-marshal.list
-	echo "#include \"xfpm-dbus-marshal.h\"" > $@ && \
-	glib-genmarshal $< --prefix=_xfpm_dbus_marshal --body >> $@
+espm-dbus-marshal.c: espm-dbus-marshal.list
+	echo "#include \"espm-dbus-marshal.h\"" > $@ && \
+	glib-genmarshal $< --prefix=_espm_dbus_marshal --body >> $@
 
-xfpm-dbus-marshal.h: xfpm-dbus-marshal.list
-	glib-genmarshal $< --prefix=_xfpm_dbus_marshal --header > $@
+espm-dbus-marshal.h: espm-dbus-marshal.list
+	glib-genmarshal $< --prefix=_espm_dbus_marshal --header > $@
 
 endif
 
 EXTRA_DIST =				\
-	xfpm-dbus-marshal.list
+	espm-dbus-marshal.list
 
 DISTCLEANFILES =			\
 	$(BUILT_SOURCES)

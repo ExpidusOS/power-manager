@@ -1,6 +1,6 @@
 appicondir = $(datadir)/icons/hicolor/scalable/apps
 appicon_DATA =								\
-    org.xfce.powermanager.svg
+    com.expidus.powermanager.svg
 
 statusiconsdir = $(datadir)/icons/hicolor/scalable/status
 statusicons_DATA =                                 \

@@ -1,4 +1,4 @@
 include:
-  - project: 'xfce/xfce4-dev-tools'
+  - project: 'expidus/expidus1-dev-tools'
     file: '/ci/build_project.yml'
 
